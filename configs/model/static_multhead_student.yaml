@@ -1,0 +1,6 @@
+model:
+  latent_dim: 64
+  action_dim: 8
+  hidden_dim: 128
+  predictor_layers: 2
+  mode: static_all_heads

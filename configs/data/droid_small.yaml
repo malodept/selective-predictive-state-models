@@ -1,0 +1,4 @@
+name: droid
+root: data/raw/droid
+clip_len: 2
+status: planned

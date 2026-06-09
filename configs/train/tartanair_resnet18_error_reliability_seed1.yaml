@@ -1,0 +1,35 @@
+seed: 1
+output_dir: outputs/tartanair_resnet18_error_reliability_seed1
+
+data:
+  name: feature_npz
+  train_path: outputs/tartanair_resnet18_features_full/features_train_errorrel.npz
+  val_path: outputs/tartanair_resnet18_features_full/features_val_errorrel.npz
+
+model:
+  latent_dim: 512
+  action_dim: 7
+  hidden_dim: 256
+  predictor_layers: 3
+  reliability_hidden_dim: 256
+  dropout: 0.05
+
+training:
+  epochs: 15
+  batch_size: 256
+  lr: 0.001
+  weight_decay: 0.0001
+  prediction_loss_weight: 1.0
+  reliability_loss_weight: 1.0
+  reliability_pos_weight: 2.0
+
+eval:
+  retrieval_ks: [1, 5, 10]
+  selector_thresholds: [0.05, 0.10, 0.20, 0.35, 0.50, 0.65, 0.80, 0.90]
+  cheap_compute: 1.0
+  optional_compute: 3.0
+  compute_penalty: 0.04
+  hard_refinement_factor: 0.25
+  easy_refinement_factor: 0.95
+  latency_warmup: 1
+  latency_repeats: 2

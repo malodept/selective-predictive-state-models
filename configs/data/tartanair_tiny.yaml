@@ -1,0 +1,8 @@
+name: synthetic
+n_train: 2048
+n_val: 512
+latent_dim: 64
+action_dim: 8
+noise_std: 0.03
+surprise_prob: 0.25
+seed: 42

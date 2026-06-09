@@ -1,0 +1,3 @@
+extends: configs/train/week1_mre.yaml
+experiment: week2_selector
+status: planned

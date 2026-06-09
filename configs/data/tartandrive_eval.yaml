@@ -1,0 +1,4 @@
+name: tartandrive
+root: data/raw/tartandrive
+clip_len: 2
+status: planned

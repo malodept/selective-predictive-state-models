@@ -1,0 +1,3 @@
+experiment: ablation_teacher
+teachers: [identity, dino_style, ijepa_style, vjepa_style]
+status: planned

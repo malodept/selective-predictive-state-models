@@ -1,0 +1,55 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "spsm"
+version = "0.1.0"
+description = "Selective Predictive State Models under deployment constraints"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "numpy>=1.24",
+    "pyyaml>=6.0",
+    "torch>=2.0",
+    "tqdm>=4.66",
+    "matplotlib>=3.7",
+    "pillow>=8",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=7.4", "ruff>=0.5"]
+vision = ["torchvision>=0.15"]
+video = ["opencv-python-headless>=4.8"]
+
+[project.scripts]
+spsm-train = "spsm.cli.train:main"
+spsm-eval = "spsm.cli.eval:main"
+spsm-profile = "spsm.cli.profile:main"
+spsm-export = "spsm.cli.export:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 100
+src = ["src", "tests"]
+
+[tool.setuptools.package-dir]
+"" = "src"
+
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+norecursedirs = [
+    ".git",
+    "data",
+    "outputs",
+    "reports",
+    "configs",
+    "docs",
+    "src",
+    "*.egg-info",
+    "__pycache__",
+]

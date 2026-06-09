@@ -1,0 +1,4 @@
+latency:
+  warmup: 10
+  repeats: 100
+  batch_size: 128

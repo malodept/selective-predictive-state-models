@@ -1,0 +1,3 @@
+calibration:
+  n_bins: 10
+  metrics: [ece, brier]

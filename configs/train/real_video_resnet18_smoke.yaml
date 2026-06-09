@@ -1,0 +1,35 @@
+seed: 42
+output_dir: outputs/real_video_resnet18_smoke
+
+data:
+  name: feature_npz
+  train_path: outputs/real_video_resnet18_features/features_train.npz
+  val_path: outputs/real_video_resnet18_features/features_val.npz
+
+model:
+  latent_dim: 512
+  action_dim: 1
+  hidden_dim: 256
+  predictor_layers: 3
+  reliability_hidden_dim: 256
+  dropout: 0.05
+
+training:
+  epochs: 20
+  batch_size: 128
+  lr: 0.0005
+  weight_decay: 0.0001
+  prediction_loss_weight: 1.0
+  reliability_loss_weight: 1.0
+  reliability_pos_weight: 2.0
+
+eval:
+  retrieval_ks: [1, 5, 10]
+  selector_thresholds: [0.05, 0.10, 0.20, 0.35, 0.50, 0.65, 0.80, 0.90]
+  cheap_compute: 1.0
+  optional_compute: 3.0
+  compute_penalty: 0.25
+  hard_refinement_factor: 0.25
+  easy_refinement_factor: 0.95
+  latency_warmup: 1
+  latency_repeats: 2

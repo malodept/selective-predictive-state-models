@@ -1,0 +1,6 @@
+name: tartanair
+root: data/raw/tartanair
+clip_len: 2
+stride: 1
+image_size: 224
+status: planned

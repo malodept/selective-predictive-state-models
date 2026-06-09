@@ -1,0 +1,74 @@
+\documentclass[10pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath, amssymb}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\usepackage{xcolor}
+
+\title{Selective Predictive State Models: Synthetic Baseline Note}
+\author{Malo de Pastor}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+This note documents a controlled synthetic proof of concept for Selective Predictive State Models. The goal is to test whether a predictive latent model can estimate the reliability of its own cheap future-state prediction and use this estimate to decide when optional refinement compute is worth paying for. The experiment is deliberately synthetic: it validates the mechanism before moving to real visual features and public datasets.
+\end{abstract}
+
+\section{Research question}
+A latent world model usually learns a transition of the form
+\begin{equation}
+    z_t, a_t \mapsto \hat z_{t+1},
+\end{equation}
+where \(z_t\) is the current latent state and \(a_t\) is an action or transition context. This project asks whether such a model can also learn when its own prediction is likely to be unreliable, and whether that reliability estimate can drive compute-aware selective refinement.
+
+\section{Synthetic setup}
+Each synthetic sample contains a current latent state \(z_t\), an action \(a_t\), and a future latent state \(z_{t+1}\). Some transitions are marked as predictably difficult before observing the future; these correspond to \emph{expected unreliability}. Some samples also receive a post-hoc future mismatch, representing an \emph{observed surprise}.
+
+The model first produces a cheap prediction \(\hat z_{t+1}^{\mathrm{cheap}}\). A reliability head predicts an unreliability score
+\begin{equation}
+    r_t = R(z_t, a_t, \hat z_{t+1}^{\mathrm{cheap}}, \phi(a_t)),
+\end{equation}
+where \(\phi(a_t)\) denotes simple action-derived features such as absolute values, squared values, and norms.
+
+The selector activates optional refinement when
+\begin{equation}
+    r_t > \tau.
+\end{equation}
+The final prediction is cheap if the selector does not activate refinement, and refined otherwise.
+
+\section{Diagnostics}
+We distinguish four diagnostics:
+\begin{center}
+\begin{tabular}{llll}
+\toprule
+Metric & Score & Label & Meaning \\
+\midrule
+Expected learned & learned unreliability & expected hard transition & anticipates predictable difficulty \\
+Expected residual & realized residual & expected hard transition & oracle-style check \\
+Observed learned & learned unreliability & observed surprise & tests anticipability of surprise \\
+Observed residual & realized residual & observed surprise & detects surprise after observation \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The realized residual is
+\begin{equation}
+    e_{t+1} = \lVert \hat z_{t+1} - z_{t+1} \rVert^2.
+\end{equation}
+It acts as a post-observation surprise score.
+
+\section{Utility}
+The compute-aware policy is evaluated with
+\begin{equation}
+    U = -\operatorname{mean}(e) - \lambda \operatorname{mean}(c),
+\end{equation}
+where \(e\) is prediction error, \(c\) is compute cost, and \(\lambda\) controls the compute penalty. A successful selective policy should approach all-expensive error while using substantially less compute.
+
+\section{Current status}
+The current synthetic baseline validates the mechanism qualitatively. The learned reliability score predicts expected unreliability, residual error detects observed surprise, and an adaptive threshold policy improves the utility--compute trade-off relative to cheap-only and all-expensive policies. The next step is to replace synthetic latents with frozen visual features extracted from real image or video sequences.
+
+\end{document}

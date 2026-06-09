@@ -1,0 +1,10 @@
+model:
+  latent_dim: 64
+  action_dim: 8
+  hidden_dim: 128
+  predictor_layers: 2
+selector:
+  thresholds: [0.1, 0.2, 0.35, 0.5, 0.65, 0.8]
+  cheap_compute: 1.0
+  optional_compute: 3.0
+  utility_scale: 1.0

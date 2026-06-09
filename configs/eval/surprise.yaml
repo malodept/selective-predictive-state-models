@@ -1,0 +1,3 @@
+surprise:
+  metrics: [auroc, auprc, brier]
+  positive_label: 1
