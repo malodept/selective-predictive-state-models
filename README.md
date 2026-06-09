@@ -200,3 +200,34 @@ evaluate transfer beyond TartanAir.
 Citation
 
 No formal citation yet. This is an early research prototype.
+
+---
+
+## v1.1: Real selective refinement
+
+The `v1.1-real-refinement` branch adds a real selective-refinement experiment.
+
+Instead of using only an evaluation-time refinement proxy, this experiment trains two actual predictors:
+
+- a cheap predictor: small MLP, 10 epochs;
+- an expensive predictor: larger MLP, 80 epochs;
+- a reliability head: trained to predict high-error transitions of the cheap predictor.
+
+On DINOv2 latents, the adaptive reliability-based selector improves utility over both static baselines across three seeds.
+
+| Policy | Mean utility |
+|---|---:|
+| cheap-only | -1.4121 |
+| all-expensive | -1.4109 |
+| adaptive selector | **-1.3932** |
+
+The adaptive selector uses only about 17% expensive executions on average:
+
+| Metric | Mean | Std |
+|---|---:|---:|
+| best error | 1.3327 | 0.0078 |
+| best compute | 1.5140 | 0.0236 |
+| selected fraction | 0.1713 | 0.0079 |
+| best utility | -1.3932 | 0.0068 |
+
+This result shows that the reliability signal can control a real trained expensive predictor, not only a proxy refinement mechanism.
