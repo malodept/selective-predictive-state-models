@@ -13,3 +13,6 @@ data/processed/
 reports/figures/*.png
 reports/tables/*.csv
 .DS_Store
+
+# Dataset folders
+data/
