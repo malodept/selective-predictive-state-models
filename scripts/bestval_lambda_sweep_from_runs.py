@@ -65,11 +65,22 @@ def normalize_row(row: dict) -> dict:
     }
 
 
-def policy_type(policy: str) -> str:
-    if policy == "cheap-only":
-        return "cheap-only"
-    if policy == "all-expensive":
+def effective_policy_type(row: dict, eps: float = 0.01) -> str:
+    """Classify the policy by its actual deployment behavior.
+
+    Some threshold policies are mathematically distinct from the explicit
+    baselines but behave almost identically in deployment. For example, a
+    threshold that activates the expensive predictor on 99.95% of samples is
+    effectively all-expensive. Collapsing these near-degenerate policies makes
+    the regime plot easier to interpret.
+    """
+    selected = float(row.get("selected", row.get("selected_fraction", 0.0)))
+    policy = str(row.get("policy", ""))
+
+    if policy == "all-expensive" or selected >= 1.0 - eps:
         return "all-expensive"
+    if policy == "cheap-only" or selected <= eps:
+        return "cheap-only"
     return "adaptive"
 
 
@@ -84,7 +95,7 @@ def load_seed_run(path: Path) -> list[dict]:
 def best_by_type(rows: list[dict], lam: float) -> dict[str, dict]:
     grouped: dict[str, list[dict]] = defaultdict(list)
     for row in rows:
-        grouped[policy_type(row["policy"])].append(row)
+        grouped[effective_policy_type(row)].append(row)
 
     out = {}
     for typ, typ_rows in grouped.items():
@@ -318,7 +329,7 @@ def main() -> None:
                 "seed": seed,
                 "lambda": lam,
                 "best_policy": best["policy"],
-                "best_type": policy_type(best["policy"]),
+                "best_type": effective_policy_type(best),
                 "best_error": best["error"],
                 "best_compute": best["compute"],
                 "best_selected": best["selected"],
