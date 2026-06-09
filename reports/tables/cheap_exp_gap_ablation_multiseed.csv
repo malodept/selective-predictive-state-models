@@ -1,0 +1,6 @@
+run,cheap_error_mean,cheap_error_std,expensive_error_mean,expensive_error_std,gap_mean,gap_std,best_policy_mode,best_error_mean,best_error_std,best_compute_mean,best_compute_std,selected_mean,selected_std,utility_mean,utility_std,policies
+cheap5/exp80,1.514328,0.009825,1.247168,0.010195,0.267160,0.019977,all-expensive,1.247168,0.010195,4.000000,0.000000,1.000000,0.000000,-1.407168,0.010195,"all-expensive, all-expensive, all-expensive"
+cheap10/exp80,1.372101,0.002023,1.250876,0.014015,0.121225,0.014379,threshold=0.65,1.332687,0.007788,1.513973,0.023635,0.171324,0.007878,-1.393246,0.006844,"threshold=0.80, threshold=0.65, threshold=0.65"
+cheap20/exp80,1.296739,0.003964,1.244153,0.015316,0.052586,0.016474,cheap-only,1.292152,0.003282,1.093256,0.131884,0.031085,0.043961,-1.335882,0.002898,"cheap-only, threshold=0.90, cheap-only"
+cheap10/exp40,1.372101,0.002023,1.146963,0.003022,0.225138,0.002731,all-expensive,1.146963,0.003022,4.000000,0.000000,1.000000,0.000000,-1.306963,0.003022,"all-expensive, all-expensive, all-expensive"
+cheap10/exp120,1.372101,0.002023,1.392020,0.008007,-0.019919,0.009834,cheap-only,1.368161,0.005663,1.089915,0.127159,0.029972,0.042386,-1.411758,0.002015,"cheap-only, threshold=0.90, cheap-only"
