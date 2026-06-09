@@ -98,6 +98,15 @@ def best_topk_policy(
     return best
 
 
+def minmax(x: np.ndarray) -> np.ndarray:
+    x = x.astype(np.float64)
+    lo = float(x.min())
+    hi = float(x.max())
+    if hi <= lo:
+        return np.zeros_like(x)
+    return (x - lo) / (hi - lo)
+
+
 def random_same_fraction(
     learned: dict,
     cheap_errors: np.ndarray,
@@ -181,6 +190,22 @@ def main() -> None:
             cheap_errors,
             expensive_errors,
         )
+
+        reliability_z = minmax(reliability_scores)
+        action_z = minmax(action_norm)
+
+        hybrid_rows = []
+        for alpha in [0.25, 0.50, 0.75]:
+            hybrid_score = alpha * reliability_z + (1.0 - alpha) * action_z
+            hybrid_rows.append(
+                best_topk_policy(
+                    f"hybrid rel/action alpha={alpha:.2f}",
+                    hybrid_score,
+                    cheap_errors,
+                    expensive_errors,
+                )
+            )
+
         random_same = random_same_fraction(
             learned,
             cheap_errors,
@@ -193,7 +218,7 @@ def main() -> None:
             expensive_errors,
         )
 
-        for row in [cheap, expensive, learned, action, random_same, oracle]:
+        for row in [cheap, expensive, learned, action, *hybrid_rows, random_same, oracle]:
             row = dict(row)
             row["seed"] = seed
             per_seed.append(row)
