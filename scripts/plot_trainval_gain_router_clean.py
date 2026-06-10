@@ -186,15 +186,15 @@ ax.set_title("Train-to-validation gain router at lambda=0.04")
 ax.set_xlabel("mean utility improvement over cheap-only")
 ax.grid(True, axis="x", alpha=0.25)
 
-for yi, g in zip(y, gains):
-    if abs(g) < 0.0005:
-        ax.text(0.002, yi, f"{g:+.3f}", va="center", ha="left", fontsize=9)
-    elif g > 0:
+for yi, g, lab in zip(y, gains, labels):
+    # Avoid clutter around the y-axis: only annotate the important positive gains
+    # and the cheap-only reference.
+    if lab == "cheap-only":
+        ax.text(0.002, yi, "+0.000", va="center", ha="left", fontsize=9)
+    elif g > 0.004:
         ax.text(g + 0.003, yi, f"{g:+.3f}", va="center", ha="left", fontsize=9)
-    else:
-        ax.text(g - 0.003, yi, f"{g:+.3f}", va="center", ha="right", fontsize=9)
 
-ax.set_xlim(-0.012, 0.118)
+ax.set_xlim(-0.012, 0.120)
 fig.tight_layout()
 fig.savefig(OUT / "trainval_gain_router_delta_utility_clean.png", bbox_inches="tight")
 plt.close(fig)
