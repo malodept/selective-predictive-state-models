@@ -1,0 +1,7 @@
+root,trajectory_dir,environment,difficulty,trajectory,image_side,pose_side,n_images,n_pose_lines,usable_frames
+data/tartanair_raw,data/tartanair_raw/japanesealley/Hard/japanesealley/Hard/P000,japanesealley,Hard,P000,image_left,pose_left.txt,397,397,397
+data/tartanair_raw,data/tartanair_raw/japanesealley/Hard/japanesealley/Hard/P001,japanesealley,Hard,P001,image_left,pose_left.txt,653,653,653
+data/tartanair_raw,data/tartanair_raw/japanesealley/Hard/japanesealley/Hard/P002,japanesealley,Hard,P002,image_left,pose_left.txt,391,391,391
+data/tartanair_raw,data/tartanair_raw/japanesealley/Hard/japanesealley/Hard/P003,japanesealley,Hard,P003,image_left,pose_left.txt,309,309,309
+data/tartanair_raw,data/tartanair_raw/japanesealley/Hard/japanesealley/Hard/P004,japanesealley,Hard,P004,image_left,pose_left.txt,362,362,362
+data/tartanair_raw,data/tartanair_raw/japanesealley/Hard/japanesealley/Hard/P005,japanesealley,Hard,P005,image_left,pose_left.txt,593,593,593
