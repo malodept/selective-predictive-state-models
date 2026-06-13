@@ -1,0 +1,18 @@
+# Residual shrinkage alpha summary over seeds
+
+Prediction family: `z_pred(alpha) = z_current + alpha * delta_hat`.
+
+| split | model | rule | seeds | alpha | error | identity error | improvement vs identity | ratio vs identity |
+| --- | --- | --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| val | cheap_residual | raw_alpha_1 | 3 | 1.000000 ± 0.000000 | 1.450387 ± 0.001945 | 1.432185 ± 0.000000 | -0.018202 ± 0.001945 | 1.012709 ± 0.001358 |
+| val | cheap_residual | oracle_best_alpha_on_this_split | 3 | 0.363333 ± 0.015275 | 1.423276 ± 0.000640 | 1.432185 ± 0.000000 | 0.008909 ± 0.000640 | 0.993780 ± 0.000447 |
+| val | cheap_residual | alpha_selected_on_val | 3 | 0.363333 ± 0.015275 | 1.423276 ± 0.000640 | 1.432185 ± 0.000000 | 0.008909 ± 0.000640 | 0.993780 ± 0.000447 |
+| val | expensive_residual | raw_alpha_1 | 3 | 1.000000 ± 0.000000 | 1.447299 ± 0.003361 | 1.432185 ± 0.000000 | -0.015115 ± 0.003361 | 1.010554 ± 0.002347 |
+| val | expensive_residual | oracle_best_alpha_on_this_split | 3 | 0.326667 ± 0.015275 | 1.427678 ± 0.000517 | 1.432185 ± 0.000000 | 0.004506 ± 0.000517 | 0.996854 ± 0.000361 |
+| val | expensive_residual | alpha_selected_on_val | 3 | 0.326667 ± 0.015275 | 1.427678 ± 0.000517 | 1.432185 ± 0.000000 | 0.004506 ± 0.000517 | 0.996854 ± 0.000361 |
+| test | cheap_residual | raw_alpha_1 | 3 | 1.000000 ± 0.000000 | 1.625385 ± 0.004365 | 1.606977 ± 0.000000 | -0.018408 ± 0.004365 | 1.011455 ± 0.002717 |
+| test | cheap_residual | oracle_best_alpha_on_this_split | 3 | 0.353333 ± 0.023094 | 1.599263 ± 0.000535 | 1.606977 ± 0.000000 | 0.007714 ± 0.000535 | 0.995200 ± 0.000333 |
+| test | cheap_residual | alpha_selected_on_val | 3 | 0.363333 ± 0.015275 | 1.599317 ± 0.000578 | 1.606977 ± 0.000000 | 0.007659 ± 0.000578 | 0.995234 ± 0.000360 |
+| test | expensive_residual | raw_alpha_1 | 3 | 1.000000 ± 0.000000 | 1.620782 ± 0.000947 | 1.606977 ± 0.000000 | -0.013805 ± 0.000947 | 1.008591 ± 0.000589 |
+| test | expensive_residual | oracle_best_alpha_on_this_split | 3 | 0.306667 ± 0.005774 | 1.603606 ± 0.000488 | 1.606977 ± 0.000000 | 0.003371 ± 0.000488 | 0.997902 ± 0.000304 |
+| test | expensive_residual | alpha_selected_on_val | 3 | 0.326667 ± 0.015275 | 1.603629 ± 0.000516 | 1.606977 ± 0.000000 | 0.003348 ± 0.000516 | 0.997917 ± 0.000321 |
