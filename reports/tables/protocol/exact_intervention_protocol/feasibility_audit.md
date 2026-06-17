@@ -51,3 +51,37 @@ Before training, evaluate:
 - frozen V-JEPA feature ranking.
 
 If the oracle is not clearly above chance, the benchmark is invalid.
+
+## NEOHPC import audit result
+
+| package | status | note |
+| --- | --- | --- |
+| calvin_env | MISSING | not available in current container |
+| calvin_agent | MISSING | not available in current container |
+| habitat | MISSING | not available in current container |
+| habitat_sim | MISSING | not available in current container |
+| gym | MISSING | not available in current container |
+| gymnasium | MISSING | not available in current container |
+| pybullet | MISSING | not available in current container |
+| robomimic | MISSING | not available in current container |
+| d4rl | MISSING | not available in current container |
+| torch | OK | available |
+| numpy | OK | available |
+| PIL | OK | available |
+| cv2 | OK | available |
+
+The current container does not contain an exact-intervention simulator. The only related directory found is `external/vjepa2/app/vjepa_droid`, which is part of the V-JEPA repository and not a ready-to-use local simulator.
+
+## Immediate decision
+
+Before installing a heavier simulator, build a minimal exact-intervention benchmark using only available dependencies.
+
+This benchmark should validate the protocol mechanics:
+
+```text
+same synthetic state
+branch K different actions
+render K different futures
+evaluate candidate ranking and oracle
+
+If this minimal benchmark works, the next environment target is PyBullet/CALVIN.
