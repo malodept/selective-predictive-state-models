@@ -1,0 +1,37 @@
+[
+  {
+    "top1": 0.2,
+    "mean_rank": 3.0,
+    "positive_margin_frac": 0.2,
+    "mean_margin": -0.07729849065875723,
+    "alpha": 0.0
+  },
+  {
+    "top1": 0.2,
+    "mean_rank": 2.7773809523809523,
+    "positive_margin_frac": 0.2,
+    "mean_margin": -0.06936529832670377,
+    "alpha": 0.25
+  },
+  {
+    "top1": 0.2,
+    "mean_rank": 2.5404761904761903,
+    "positive_margin_frac": 0.2,
+    "mean_margin": -0.06145917875248762,
+    "alpha": 0.5
+  },
+  {
+    "top1": 0.20357142857142857,
+    "mean_rank": 2.3654761904761905,
+    "positive_margin_frac": 0.20357142857142857,
+    "mean_margin": -0.053609266974741505,
+    "alpha": 0.75
+  },
+  {
+    "top1": 0.21428571428571427,
+    "mean_rank": 2.282142857142857,
+    "positive_margin_frac": 0.2130952380952381,
+    "mean_margin": -0.045859744546136685,
+    "alpha": 1.0
+  }
+]
