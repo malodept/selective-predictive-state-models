@@ -16,3 +16,5 @@ reports/tables/*.csv
 
 # Dataset folders
 data/
+reports/tables/protocol/training_audit/**/checkpoint*.pt
+reports/tables/protocol/**/checkpoint*.pt
