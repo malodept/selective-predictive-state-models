@@ -1,0 +1,50 @@
+{
+  "data": "outputs/tartanair_vjepa2_1_base384_causal16_multi_env/env_split/features_val.npz",
+  "out": "outputs/counterfactual/tartanair_silver/val_groups_latent_only_v0.npz",
+  "n_samples": 10890,
+  "tokens": 16,
+  "dim": 768,
+  "groups": 8000,
+  "candidates": 5,
+  "chance_top1": 0.2,
+  "pool_size": 10890,
+  "state_proj_dim": 64,
+  "nearest_pool": 256,
+  "min_action_dist": 0.25,
+  "min_future_dist": 0.02,
+  "allow_same_trajectory": false,
+  "latent_distance_offdiag": {
+    "min": 0.5052118301391602,
+    "p05": 0.646446943283081,
+    "p25": 0.7779926061630249,
+    "median": 0.873684823513031,
+    "p75": 0.939441978931427,
+    "p95": 1.0229767560958862,
+    "max": 1.1236214637756348,
+    "mean": 0.8554749488830566
+  },
+  "action_distance_offdiag": {
+    "min": 0.2524893581867218,
+    "p05": 0.8638108879327774,
+    "p25": 1.8066273033618927,
+    "median": 2.7546002864837646,
+    "p75": 3.9067445397377014,
+    "p95": 6.6703155279159505,
+    "max": 20.381534576416016,
+    "mean": 3.220903158187866
+  },
+  "future_distance_offdiag": {
+    "min": 13.658296585083008,
+    "p05": 19.496896743774414,
+    "p25": 24.080310821533203,
+    "median": 27.35525131225586,
+    "p75": 32.14737319946289,
+    "p95": 43.299085426330564,
+    "max": 61.63328170776367,
+    "mean": 28.849679946899414
+  },
+  "same_trajectory_fraction_offdiag": 0.0,
+  "same_environment_fraction_offdiag": 1.0,
+  "unique_anchor_trajectories": 5,
+  "unique_anchor_environments": 1
+}
