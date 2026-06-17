@@ -20,3 +20,7 @@ This sweep compares intra-epoch model selection under different regularization s
 ## Note on incomplete run
 
 The `drop015_wd005` configuration produced checkpoints but did not write `intraepoch_rows.json`, likely because the process was interrupted after checkpointing and before final report serialization. The visible log reached approximately `OOD error = 0.032872` and `OOD gain = 0.005382`, which does not improve over the `base` configuration. It is therefore excluded from the table without changing the conclusion.
+
+## Note on incomplete run
+
+The `drop015_wd005` configuration produced checkpoints but did not write `intraepoch_rows.json`, likely because the process was interrupted after checkpointing and before final report serialization. The visible log reached approximately `OOD error = 0.032872` and `OOD gain = 0.005382`, which does not improve over the `base` configuration. It is therefore excluded from the table without changing the conclusion.
