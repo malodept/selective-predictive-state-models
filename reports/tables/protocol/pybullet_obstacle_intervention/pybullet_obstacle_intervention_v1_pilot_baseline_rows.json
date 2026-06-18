@@ -1,0 +1,66 @@
+[
+  {
+    "top1": 0.2,
+    "mean_rank": 3.0,
+    "positive_margin_frac": 0.2,
+    "mean_margin": -0.005055157181061805,
+    "model": "identity",
+    "alpha": 0.0
+  },
+  {
+    "top1": 0.2,
+    "mean_rank": 3.0,
+    "positive_margin_frac": 0.2,
+    "mean_margin": -0.005055157181061805,
+    "model": "delta_oracle_original",
+    "alpha": 0.0
+  },
+  {
+    "top1": 0.2,
+    "mean_rank": 2.62,
+    "positive_margin_frac": 0.2,
+    "mean_margin": -0.00246086938540393,
+    "model": "delta_oracle_original",
+    "alpha": 0.25
+  },
+  {
+    "top1": 0.346,
+    "mean_rank": 1.8848,
+    "positive_margin_frac": 0.346,
+    "mean_margin": 6.83221540573868e-05,
+    "model": "delta_oracle_original",
+    "alpha": 0.5
+  },
+  {
+    "top1": 1.0,
+    "mean_rank": 1.0,
+    "positive_margin_frac": 1.0,
+    "mean_margin": 0.002511976140056504,
+    "model": "delta_oracle_original",
+    "alpha": 0.75
+  },
+  {
+    "top1": 1.0,
+    "mean_rank": 1.0,
+    "positive_margin_frac": 1.0,
+    "mean_margin": 0.004878385982185137,
+    "model": "delta_oracle_original",
+    "alpha": 1.0
+  },
+  {
+    "top1": 0.0,
+    "mean_rank": 3.4756,
+    "positive_margin_frac": 0.0,
+    "mean_margin": -0.008999658429878763,
+    "model": "delta_oracle_deranged",
+    "alpha": 1.0
+  },
+  {
+    "top1": 0.216,
+    "mean_rank": 2.9816,
+    "positive_margin_frac": 0.216,
+    "mean_margin": -0.006151749528601067,
+    "model": "delta_oracle_random_shuffle",
+    "alpha": 1.0
+  }
+]

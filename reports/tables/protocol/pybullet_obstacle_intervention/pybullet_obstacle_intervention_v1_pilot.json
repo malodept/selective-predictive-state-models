@@ -1,0 +1,33 @@
+{
+  "out": "outputs/counterfactual/pybullet_obstacles/pybullet_obstacle_intervention_v1_pilot.npz",
+  "groups": 500,
+  "candidates": 5,
+  "samples": 2500,
+  "chance_top1": 0.2,
+  "z_current_shape": [
+    2500,
+    16,
+    19
+  ],
+  "z_future_shape": [
+    2500,
+    16,
+    19
+  ],
+  "action_shape": [
+    2500,
+    2
+  ],
+  "image_size": 96,
+  "patch_grid": 4,
+  "horizon": 36,
+  "velocity": 1.2,
+  "num_blocked_directions": 2,
+  "action_names": [
+    "stay",
+    "right",
+    "left",
+    "forward",
+    "backward"
+  ]
+}
