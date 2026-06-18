@@ -1,0 +1,32 @@
+{
+  "out": "outputs/counterfactual/toy_exact/toy_exact_intervention_v0.npz",
+  "groups": 1000,
+  "candidates": 5,
+  "samples": 5000,
+  "chance_top1": 0.2,
+  "z_current_shape": [
+    5000,
+    16,
+    8
+  ],
+  "z_future_shape": [
+    5000,
+    16,
+    8
+  ],
+  "action_shape": [
+    5000,
+    2
+  ],
+  "image_size": 64,
+  "step": 8,
+  "radius": 4,
+  "patch_grid": 4,
+  "action_names": [
+    "stay",
+    "right",
+    "left",
+    "down",
+    "up"
+  ]
+}
