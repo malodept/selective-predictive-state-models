@@ -1,0 +1,173 @@
+nohup: ignoring input
+====================================================================================================
+PyBullet obstacle v1 2k ablation: full
+====================================================================================================
+[0;93m2026-06-18 12:32:45.309982671 [W:onnxruntime:Default, device_discovery.cc:283 GetGpuDevices] Failed to detect devices under "/sys/class/drm/card0": device_discovery.cc:93 ReadFileContents Failed to open file: "/sys/class/drm/card0/device/vendor"[m
+mode=full epoch=001 train_delta_mse=0.00495668 val_future_mse=0.00398105
+mode=full epoch=020 train_delta_mse=0.00177872 val_future_mse=0.00203219
+mode=full epoch=040 train_delta_mse=0.00134573 val_future_mse=0.00147569
+mode=full epoch=060 train_delta_mse=0.00110905 val_future_mse=0.00105796
+mode=full epoch=080 train_delta_mse=0.00091141 val_future_mse=0.00084563
+mode=full epoch=100 train_delta_mse=0.00073567 val_future_mse=0.00080890
+mode=full epoch=120 train_delta_mse=0.00065932 val_future_mse=0.00064433
+mode=full epoch=140 train_delta_mse=0.00061177 val_future_mse=0.00057993
+mode=full epoch=160 train_delta_mse=0.00053935 val_future_mse=0.00053690
+mode=full epoch=180 train_delta_mse=0.00048478 val_future_mse=0.00044934
+mode=full epoch=200 train_delta_mse=0.00041788 val_future_mse=0.00041851
+reports/tables/protocol/pybullet_obstacle_intervention/scale_seed0/ablations/full_seed0.md
+# Exact-intervention ablation MLP: full
+
+- data: `outputs/counterfactual/pybullet_obstacles_scale/pybullet_obstacle_intervention_v1_2k_seed0.npz`
+- mode: `full`
+- groups: `2000`
+- candidates: `5`
+- train/val/test groups: `1600/200/200`
+- chance top-1: `0.200000`
+- best validation future MSE: `0.00036601`
+
+## Candidate-matching evaluation
+
+| split | intervention | top-1 | mean rank | positive margin frac | mean margin |
+| --- | --- | ---: | ---: | ---: | ---: |
+| train | original | 0.973875 | 1.040500 | 0.973875 | 0.004185 |
+| train | zero | 0.200000 | 3.000000 | 0.200000 | -0.005133 |
+| train | within_group_shuffle | 0.207000 | 2.971750 | 0.207000 | -0.005741 |
+| train | within_group_reverse | 0.204625 | 2.875250 | 0.204625 | -0.004925 |
+| val | original | 0.977000 | 1.034000 | 0.977000 | 0.004107 |
+| val | zero | 0.200000 | 3.000000 | 0.200000 | -0.005057 |
+| val | within_group_shuffle | 0.187000 | 3.007000 | 0.187000 | -0.005828 |
+| val | within_group_reverse | 0.202000 | 2.889000 | 0.202000 | -0.004853 |
+| test | original | 0.960000 | 1.064000 | 0.960000 | 0.003974 |
+| test | zero | 0.200000 | 3.000000 | 0.200000 | -0.004999 |
+| test | within_group_shuffle | 0.189000 | 3.039000 | 0.189000 | -0.005896 |
+| test | within_group_reverse | 0.206000 | 2.897000 | 0.206000 | -0.004900 |
+
+====================================================================================================
+PyBullet obstacle v1 2k ablation: action_only
+====================================================================================================
+[0;93m2026-06-18 12:33:16.173018489 [W:onnxruntime:Default, device_discovery.cc:283 GetGpuDevices] Failed to detect devices under "/sys/class/drm/card0": device_discovery.cc:93 ReadFileContents Failed to open file: "/sys/class/drm/card0/device/vendor"[m
+mode=action_only epoch=001 train_delta_mse=0.00503663 val_future_mse=0.00463780
+mode=action_only epoch=020 train_delta_mse=0.00470196 val_future_mse=0.00458287
+mode=action_only epoch=040 train_delta_mse=0.00471835 val_future_mse=0.00459098
+mode=action_only epoch=060 train_delta_mse=0.00472365 val_future_mse=0.00459015
+mode=action_only epoch=080 train_delta_mse=0.00468584 val_future_mse=0.00459272
+mode=action_only epoch=100 train_delta_mse=0.00472691 val_future_mse=0.00459630
+mode=action_only epoch=120 train_delta_mse=0.00473749 val_future_mse=0.00459135
+mode=action_only epoch=140 train_delta_mse=0.00469976 val_future_mse=0.00458307
+mode=action_only epoch=160 train_delta_mse=0.00469510 val_future_mse=0.00459418
+mode=action_only epoch=180 train_delta_mse=0.00474211 val_future_mse=0.00458703
+mode=action_only epoch=200 train_delta_mse=0.00471385 val_future_mse=0.00458994
+reports/tables/protocol/pybullet_obstacle_intervention/scale_seed0/ablations/action_only_seed0.md
+# Exact-intervention ablation MLP: action_only
+
+- data: `outputs/counterfactual/pybullet_obstacles_scale/pybullet_obstacle_intervention_v1_2k_seed0.npz`
+- mode: `action_only`
+- groups: `2000`
+- candidates: `5`
+- train/val/test groups: `1600/200/200`
+- chance top-1: `0.200000`
+- best validation future MSE: `0.00458287`
+
+## Candidate-matching evaluation
+
+| split | intervention | top-1 | mean rank | positive margin frac | mean margin |
+| --- | --- | ---: | ---: | ---: | ---: |
+| train | original | 0.211125 | 2.807375 | 0.211125 | -0.003976 |
+| train | zero | 0.200000 | 3.000000 | 0.200000 | -0.005128 |
+| train | within_group_shuffle | 0.197625 | 2.997500 | 0.197625 | -0.004990 |
+| train | within_group_reverse | 0.198250 | 2.944625 | 0.198250 | -0.004814 |
+| val | original | 0.214000 | 2.822000 | 0.214000 | -0.003882 |
+| val | zero | 0.200000 | 3.000000 | 0.200000 | -0.005038 |
+| val | within_group_shuffle | 0.202000 | 3.007000 | 0.202000 | -0.004916 |
+| val | within_group_reverse | 0.190000 | 2.959000 | 0.190000 | -0.004715 |
+| test | original | 0.210000 | 2.812000 | 0.210000 | -0.003900 |
+| test | zero | 0.200000 | 3.000000 | 0.200000 | -0.004988 |
+| test | within_group_shuffle | 0.197000 | 3.004000 | 0.197000 | -0.004899 |
+| test | within_group_reverse | 0.199000 | 2.934000 | 0.199000 | -0.004693 |
+
+====================================================================================================
+PyBullet obstacle v1 2k ablation: state_only
+====================================================================================================
+[0;93m2026-06-18 12:33:45.405363954 [W:onnxruntime:Default, device_discovery.cc:283 GetGpuDevices] Failed to detect devices under "/sys/class/drm/card0": device_discovery.cc:93 ReadFileContents Failed to open file: "/sys/class/drm/card0/device/vendor"[m
+mode=state_only epoch=001 train_delta_mse=0.00501694 val_future_mse=0.00422381
+mode=state_only epoch=020 train_delta_mse=0.00398768 val_future_mse=0.00391939
+mode=state_only epoch=040 train_delta_mse=0.00390604 val_future_mse=0.00383514
+mode=state_only epoch=060 train_delta_mse=0.00392175 val_future_mse=0.00382371
+mode=state_only epoch=080 train_delta_mse=0.00386624 val_future_mse=0.00383376
+mode=state_only epoch=100 train_delta_mse=0.00384841 val_future_mse=0.00377207
+mode=state_only epoch=120 train_delta_mse=0.00383302 val_future_mse=0.00376837
+mode=state_only epoch=140 train_delta_mse=0.00382691 val_future_mse=0.00379661
+mode=state_only epoch=160 train_delta_mse=0.00385010 val_future_mse=0.00375125
+mode=state_only epoch=180 train_delta_mse=0.00380631 val_future_mse=0.00376614
+mode=state_only epoch=200 train_delta_mse=0.00381870 val_future_mse=0.00375644
+reports/tables/protocol/pybullet_obstacle_intervention/scale_seed0/ablations/state_only_seed0.md
+# Exact-intervention ablation MLP: state_only
+
+- data: `outputs/counterfactual/pybullet_obstacles_scale/pybullet_obstacle_intervention_v1_2k_seed0.npz`
+- mode: `state_only`
+- groups: `2000`
+- candidates: `5`
+- train/val/test groups: `1600/200/200`
+- chance top-1: `0.200000`
+- best validation future MSE: `0.00373666`
+
+## Candidate-matching evaluation
+
+| split | intervention | top-1 | mean rank | positive margin frac | mean margin |
+| --- | --- | ---: | ---: | ---: | ---: |
+| train | original | 0.200000 | 3.000000 | 0.200000 | -0.002501 |
+| train | zero | 0.200000 | 3.000000 | 0.200000 | -0.002501 |
+| train | within_group_shuffle | 0.200000 | 3.000000 | 0.200000 | -0.002501 |
+| train | within_group_reverse | 0.200000 | 3.000000 | 0.200000 | -0.002501 |
+| val | original | 0.200000 | 3.000000 | 0.200000 | -0.002479 |
+| val | zero | 0.200000 | 3.000000 | 0.200000 | -0.002479 |
+| val | within_group_shuffle | 0.200000 | 3.000000 | 0.200000 | -0.002479 |
+| val | within_group_reverse | 0.200000 | 3.000000 | 0.200000 | -0.002479 |
+| test | original | 0.200000 | 3.000000 | 0.200000 | -0.002389 |
+| test | zero | 0.200000 | 3.000000 | 0.200000 | -0.002389 |
+| test | within_group_shuffle | 0.200000 | 3.000000 | 0.200000 | -0.002389 |
+| test | within_group_reverse | 0.200000 | 3.000000 | 0.200000 | -0.002389 |
+
+====================================================================================================
+PyBullet obstacle v1 2k ablation: no_context
+====================================================================================================
+[0;93m2026-06-18 12:34:16.678787274 [W:onnxruntime:Default, device_discovery.cc:283 GetGpuDevices] Failed to detect devices under "/sys/class/drm/card0": device_discovery.cc:93 ReadFileContents Failed to open file: "/sys/class/drm/card0/device/vendor"[m
+mode=no_context epoch=001 train_delta_mse=0.00536405 val_future_mse=0.00511141
+mode=no_context epoch=020 train_delta_mse=0.00519543 val_future_mse=0.00509582
+mode=no_context epoch=040 train_delta_mse=0.00520908 val_future_mse=0.00509440
+mode=no_context epoch=060 train_delta_mse=0.00519984 val_future_mse=0.00509535
+mode=no_context epoch=080 train_delta_mse=0.00519945 val_future_mse=0.00509202
+mode=no_context epoch=100 train_delta_mse=0.00522496 val_future_mse=0.00509363
+mode=no_context epoch=120 train_delta_mse=0.00520046 val_future_mse=0.00509336
+mode=no_context epoch=140 train_delta_mse=0.00518599 val_future_mse=0.00509398
+mode=no_context epoch=160 train_delta_mse=0.00521182 val_future_mse=0.00509286
+mode=no_context epoch=180 train_delta_mse=0.00519908 val_future_mse=0.00509158
+mode=no_context epoch=200 train_delta_mse=0.00520942 val_future_mse=0.00509527
+reports/tables/protocol/pybullet_obstacle_intervention/scale_seed0/ablations/no_context_seed0.md
+# Exact-intervention ablation MLP: no_context
+
+- data: `outputs/counterfactual/pybullet_obstacles_scale/pybullet_obstacle_intervention_v1_2k_seed0.npz`
+- mode: `no_context`
+- groups: `2000`
+- candidates: `5`
+- train/val/test groups: `1600/200/200`
+- chance top-1: `0.200000`
+- best validation future MSE: `0.00509070`
+
+## Candidate-matching evaluation
+
+| split | intervention | top-1 | mean rank | positive margin frac | mean margin |
+| --- | --- | ---: | ---: | ---: | ---: |
+| train | original | 0.200000 | 3.000000 | 0.200000 | -0.004991 |
+| train | zero | 0.200000 | 3.000000 | 0.200000 | -0.004991 |
+| train | within_group_shuffle | 0.200000 | 3.000000 | 0.200000 | -0.004991 |
+| train | within_group_reverse | 0.200000 | 3.000000 | 0.200000 | -0.004991 |
+| val | original | 0.200000 | 3.000000 | 0.200000 | -0.004907 |
+| val | zero | 0.200000 | 3.000000 | 0.200000 | -0.004907 |
+| val | within_group_shuffle | 0.200000 | 3.000000 | 0.200000 | -0.004907 |
+| val | within_group_reverse | 0.200000 | 3.000000 | 0.200000 | -0.004907 |
+| test | original | 0.200000 | 3.000000 | 0.200000 | -0.004844 |
+| test | zero | 0.200000 | 3.000000 | 0.200000 | -0.004844 |
+| test | within_group_shuffle | 0.200000 | 3.000000 | 0.200000 | -0.004844 |
+| test | within_group_reverse | 0.200000 | 3.000000 | 0.200000 | -0.004844 |
+
