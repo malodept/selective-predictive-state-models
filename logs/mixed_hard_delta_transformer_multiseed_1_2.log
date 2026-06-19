@@ -1,0 +1,473 @@
+nohup: ignoring input
+====================================================================================================
+Mixed hard delta Transformer: mode=full, seed=1
+====================================================================================================
+/opt/conda/lib/python3.11/site-packages/torch/nn/modules/transformer.py:307: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  warnings.warn(f"enable_nested_tensor is True, but self.use_nested_tensor is False because {why_not_sparsity_fast_path}")
+[0;93m2026-06-19 11:14:27.291871463 [W:onnxruntime:Default, device_discovery.cc:283 GetGpuDevices] Failed to detect devices under "/sys/class/drm/card0": device_discovery.cc:93 ReadFileContents Failed to open file: "/sys/class/drm/card0/device/vendor"[m
+mode=full epoch=001 loss=2.411919 val_top1=0.200000 val_rank=3.150
+mode=full epoch=020 loss=0.057772 val_top1=0.870000 val_rank=1.190
+mode=full epoch=040 loss=0.018500 val_top1=0.900000 val_rank=1.140
+mode=full epoch=060 loss=0.232188 val_top1=0.770000 val_rank=1.330
+mode=full epoch=080 loss=0.018314 val_top1=0.920000 val_rank=1.110
+mode=full epoch=100 loss=0.012328 val_top1=0.920000 val_rank=1.100
+mode=full epoch=120 loss=0.050298 val_top1=0.900000 val_rank=1.120
+mode=full epoch=140 loss=0.015162 val_top1=0.920000 val_rank=1.150
+mode=full epoch=160 loss=0.010862 val_top1=0.920000 val_rank=1.140
+mode=full epoch=180 loss=0.008958 val_top1=0.930000 val_rank=1.110
+mode=full epoch=200 loss=0.017650 val_top1=0.930000 val_rank=1.110
+mode=full epoch=220 loss=0.010794 val_top1=0.930000 val_rank=1.100
+mode=full epoch=240 loss=0.016928 val_top1=0.900000 val_rank=1.170
+mode=full epoch=260 loss=0.009414 val_top1=0.920000 val_rank=1.140
+mode=full epoch=280 loss=0.012535 val_top1=0.920000 val_rank=1.150
+mode=full epoch=300 loss=0.007139 val_top1=0.930000 val_rank=1.110
+reports/tables/protocol/pybullet_obstacle_rgb_encoder/mixed_hard/delta_transformer/full_seed1.md
+# Mixed hard delta Transformer: full
+
+- data: `outputs/counterfactual/pybullet_obstacles_rgb/pybullet_obstacle_rgb_v1_500_seed0_dinov2_vits14_pool4.npz`
+- groups: `outputs/counterfactual/pybullet_obstacles_rgb/mixed_hard/mixed_hard_v0_groups.npz`
+- mode: `full`
+- groups count: `1000`
+- candidates: `5`
+- tokens: `16`
+- token dim: `384`
+- model dim: `384`
+- layers: `3`
+- heads: `6`
+- train/val/test groups: `800/100/100`
+- chance top-1: `0.200000`
+- best val top-1: `0.950000`
+
+| split | variant | top-1 | mean rank | positive margin frac | mean margin |
+| --- | --- | ---: | ---: | ---: | ---: |
+| train | original | 1.000000 | 1.000000 | 1.000000 | 0.144014 |
+| train | action_zero | 0.460000 | 2.101250 | 0.460000 | -0.012897 |
+| train | cond_state_shuffle | 0.421250 | 2.550000 | 0.421250 | -0.037678 |
+| train | cond_state_zero | 0.286250 | 2.650000 | 0.286250 | -0.038125 |
+| val | original | 0.950000 | 1.090000 | 0.950000 | 0.095948 |
+| val | action_zero | 0.350000 | 2.410000 | 0.350000 | -0.029825 |
+| val | cond_state_shuffle | 0.410000 | 2.710000 | 0.410000 | -0.039618 |
+| val | cond_state_zero | 0.280000 | 2.640000 | 0.280000 | -0.034403 |
+| test | original | 0.940000 | 1.100000 | 0.940000 | 0.095756 |
+| test | action_zero | 0.340000 | 2.480000 | 0.340000 | -0.035575 |
+| test | cond_state_shuffle | 0.450000 | 2.360000 | 0.450000 | -0.017232 |
+| test | cond_state_zero | 0.280000 | 2.700000 | 0.280000 | -0.042506 |
+
+## Interpretation
+
+This model predicts latent displacement tokens using a spatial Transformer over DINOv2 patch tokens.
+It is evaluated on mixed hard negatives in delta space.
+
+====================================================================================================
+Mixed hard delta Transformer: mode=action_only, seed=1
+====================================================================================================
+/opt/conda/lib/python3.11/site-packages/torch/nn/modules/transformer.py:307: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  warnings.warn(f"enable_nested_tensor is True, but self.use_nested_tensor is False because {why_not_sparsity_fast_path}")
+[0;93m2026-06-19 11:16:35.899028485 [W:onnxruntime:Default, device_discovery.cc:283 GetGpuDevices] Failed to detect devices under "/sys/class/drm/card0": device_discovery.cc:93 ReadFileContents Failed to open file: "/sys/class/drm/card0/device/vendor"[m
+mode=action_only epoch=001 loss=2.364669 val_top1=0.200000 val_rank=3.000
+mode=action_only epoch=020 loss=1.294657 val_top1=0.370000 val_rank=2.170
+mode=action_only epoch=040 loss=1.174311 val_top1=0.370000 val_rank=2.110
+mode=action_only epoch=060 loss=1.089428 val_top1=0.370000 val_rank=2.100
+mode=action_only epoch=080 loss=1.056706 val_top1=0.350000 val_rank=2.160
+mode=action_only epoch=100 loss=1.045357 val_top1=0.380000 val_rank=2.080
+mode=action_only epoch=120 loss=1.047108 val_top1=0.360000 val_rank=2.120
+mode=action_only epoch=140 loss=1.049712 val_top1=0.340000 val_rank=2.140
+mode=action_only epoch=160 loss=1.027362 val_top1=0.350000 val_rank=2.080
+mode=action_only epoch=180 loss=1.020947 val_top1=0.350000 val_rank=2.120
+mode=action_only epoch=200 loss=1.011067 val_top1=0.330000 val_rank=2.150
+mode=action_only epoch=220 loss=1.013505 val_top1=0.310000 val_rank=2.150
+mode=action_only epoch=240 loss=1.015896 val_top1=0.280000 val_rank=2.170
+mode=action_only epoch=260 loss=0.993493 val_top1=0.310000 val_rank=2.170
+mode=action_only epoch=280 loss=0.987218 val_top1=0.280000 val_rank=2.170
+mode=action_only epoch=300 loss=0.971620 val_top1=0.300000 val_rank=2.130
+reports/tables/protocol/pybullet_obstacle_rgb_encoder/mixed_hard/delta_transformer/action_only_seed1.md
+# Mixed hard delta Transformer: action_only
+
+- data: `outputs/counterfactual/pybullet_obstacles_rgb/pybullet_obstacle_rgb_v1_500_seed0_dinov2_vits14_pool4.npz`
+- groups: `outputs/counterfactual/pybullet_obstacles_rgb/mixed_hard/mixed_hard_v0_groups.npz`
+- mode: `action_only`
+- groups count: `1000`
+- candidates: `5`
+- tokens: `16`
+- token dim: `384`
+- model dim: `384`
+- layers: `3`
+- heads: `6`
+- train/val/test groups: `800/100/100`
+- chance top-1: `0.200000`
+- best val top-1: `0.410000`
+
+| split | variant | top-1 | mean rank | positive margin frac | mean margin |
+| --- | --- | ---: | ---: | ---: | ---: |
+| train | original | 0.536250 | 1.766250 | 0.536250 | 0.002303 |
+| train | action_zero | 0.255000 | 2.832500 | 0.255000 | -0.028309 |
+| train | cond_state_shuffle | 0.536250 | 1.766250 | 0.536250 | 0.002303 |
+| train | cond_state_zero | 0.536250 | 1.766250 | 0.536250 | 0.002303 |
+| val | original | 0.410000 | 2.090000 | 0.410000 | -0.014366 |
+| val | action_zero | 0.230000 | 2.890000 | 0.230000 | -0.029481 |
+| val | cond_state_shuffle | 0.410000 | 2.090000 | 0.410000 | -0.014366 |
+| val | cond_state_zero | 0.410000 | 2.090000 | 0.410000 | -0.014366 |
+| test | original | 0.250000 | 2.360000 | 0.250000 | -0.020683 |
+| test | action_zero | 0.120000 | 3.300000 | 0.120000 | -0.038752 |
+| test | cond_state_shuffle | 0.250000 | 2.360000 | 0.250000 | -0.020683 |
+| test | cond_state_zero | 0.250000 | 2.360000 | 0.250000 | -0.020683 |
+
+## Interpretation
+
+This model predicts latent displacement tokens using a spatial Transformer over DINOv2 patch tokens.
+It is evaluated on mixed hard negatives in delta space.
+
+====================================================================================================
+Mixed hard delta Transformer: mode=state_only, seed=1
+====================================================================================================
+/opt/conda/lib/python3.11/site-packages/torch/nn/modules/transformer.py:307: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  warnings.warn(f"enable_nested_tensor is True, but self.use_nested_tensor is False because {why_not_sparsity_fast_path}")
+[0;93m2026-06-19 11:18:32.044417533 [W:onnxruntime:Default, device_discovery.cc:283 GetGpuDevices] Failed to detect devices under "/sys/class/drm/card0": device_discovery.cc:93 ReadFileContents Failed to open file: "/sys/class/drm/card0/device/vendor"[m
+mode=state_only epoch=001 loss=2.439742 val_top1=0.210000 val_rank=3.110
+mode=state_only epoch=020 loss=0.720054 val_top1=0.300000 val_rank=2.270
+mode=state_only epoch=040 loss=0.475839 val_top1=0.220000 val_rank=2.460
+mode=state_only epoch=060 loss=0.401522 val_top1=0.280000 val_rank=2.490
+mode=state_only epoch=080 loss=0.379888 val_top1=0.280000 val_rank=2.410
+mode=state_only epoch=100 loss=0.356225 val_top1=0.260000 val_rank=2.500
+mode=state_only epoch=120 loss=0.343541 val_top1=0.280000 val_rank=2.450
+mode=state_only epoch=140 loss=0.335081 val_top1=0.230000 val_rank=2.560
+mode=state_only epoch=160 loss=0.327044 val_top1=0.260000 val_rank=2.570
+mode=state_only epoch=180 loss=0.323378 val_top1=0.280000 val_rank=2.610
+mode=state_only epoch=200 loss=0.323537 val_top1=0.260000 val_rank=2.580
+mode=state_only epoch=220 loss=0.324096 val_top1=0.260000 val_rank=2.590
+mode=state_only epoch=240 loss=0.301757 val_top1=0.230000 val_rank=2.700
+mode=state_only epoch=260 loss=0.305934 val_top1=0.240000 val_rank=2.720
+mode=state_only epoch=280 loss=0.315501 val_top1=0.250000 val_rank=2.650
+mode=state_only epoch=300 loss=0.315819 val_top1=0.240000 val_rank=2.770
+reports/tables/protocol/pybullet_obstacle_rgb_encoder/mixed_hard/delta_transformer/state_only_seed1.md
+# Mixed hard delta Transformer: state_only
+
+- data: `outputs/counterfactual/pybullet_obstacles_rgb/pybullet_obstacle_rgb_v1_500_seed0_dinov2_vits14_pool4.npz`
+- groups: `outputs/counterfactual/pybullet_obstacles_rgb/mixed_hard/mixed_hard_v0_groups.npz`
+- mode: `state_only`
+- groups count: `1000`
+- candidates: `5`
+- tokens: `16`
+- token dim: `384`
+- model dim: `384`
+- layers: `3`
+- heads: `6`
+- train/val/test groups: `800/100/100`
+- chance top-1: `0.200000`
+- best val top-1: `0.370000`
+
+| split | variant | top-1 | mean rank | positive margin frac | mean margin |
+| --- | --- | ---: | ---: | ---: | ---: |
+| train | original | 0.428750 | 1.983750 | 0.428750 | -0.004822 |
+| train | action_zero | 0.428750 | 1.983750 | 0.428750 | -0.004822 |
+| train | cond_state_shuffle | 0.218750 | 3.025000 | 0.218750 | -0.035326 |
+| train | cond_state_zero | 0.108750 | 3.310000 | 0.108750 | -0.061608 |
+| val | original | 0.370000 | 2.110000 | 0.370000 | -0.012544 |
+| val | action_zero | 0.370000 | 2.110000 | 0.370000 | -0.012544 |
+| val | cond_state_shuffle | 0.180000 | 3.140000 | 0.180000 | -0.038028 |
+| val | cond_state_zero | 0.090000 | 3.310000 | 0.090000 | -0.058398 |
+| test | original | 0.290000 | 2.400000 | 0.290000 | -0.017981 |
+| test | action_zero | 0.290000 | 2.400000 | 0.290000 | -0.017981 |
+| test | cond_state_shuffle | 0.210000 | 2.980000 | 0.210000 | -0.038180 |
+| test | cond_state_zero | 0.150000 | 3.210000 | 0.150000 | -0.053070 |
+
+## Interpretation
+
+This model predicts latent displacement tokens using a spatial Transformer over DINOv2 patch tokens.
+It is evaluated on mixed hard negatives in delta space.
+
+====================================================================================================
+Mixed hard delta Transformer: mode=no_context, seed=1
+====================================================================================================
+/opt/conda/lib/python3.11/site-packages/torch/nn/modules/transformer.py:307: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  warnings.warn(f"enable_nested_tensor is True, but self.use_nested_tensor is False because {why_not_sparsity_fast_path}")
+[0;93m2026-06-19 11:20:24.093099437 [W:onnxruntime:Default, device_discovery.cc:283 GetGpuDevices] Failed to detect devices under "/sys/class/drm/card0": device_discovery.cc:93 ReadFileContents Failed to open file: "/sys/class/drm/card0/device/vendor"[m
+mode=no_context epoch=001 loss=2.506046 val_top1=0.180000 val_rank=3.190
+mode=no_context epoch=020 loss=1.912942 val_top1=0.240000 val_rank=3.020
+mode=no_context epoch=040 loss=1.800128 val_top1=0.220000 val_rank=3.080
+mode=no_context epoch=060 loss=1.737464 val_top1=0.210000 val_rank=3.020
+mode=no_context epoch=080 loss=1.688054 val_top1=0.220000 val_rank=3.010
+mode=no_context epoch=100 loss=1.655325 val_top1=0.220000 val_rank=3.050
+mode=no_context epoch=120 loss=1.631781 val_top1=0.170000 val_rank=3.060
+mode=no_context epoch=140 loss=1.606143 val_top1=0.220000 val_rank=3.120
+mode=no_context epoch=160 loss=1.586262 val_top1=0.160000 val_rank=3.140
+mode=no_context epoch=180 loss=1.602439 val_top1=0.200000 val_rank=3.090
+mode=no_context epoch=200 loss=1.557835 val_top1=0.170000 val_rank=3.170
+mode=no_context epoch=220 loss=1.547298 val_top1=0.150000 val_rank=3.160
+mode=no_context epoch=240 loss=1.554590 val_top1=0.190000 val_rank=3.130
+mode=no_context epoch=260 loss=1.537756 val_top1=0.190000 val_rank=3.110
+mode=no_context epoch=280 loss=1.539853 val_top1=0.130000 val_rank=3.190
+mode=no_context epoch=300 loss=1.522961 val_top1=0.160000 val_rank=3.210
+reports/tables/protocol/pybullet_obstacle_rgb_encoder/mixed_hard/delta_transformer/no_context_seed1.md
+# Mixed hard delta Transformer: no_context
+
+- data: `outputs/counterfactual/pybullet_obstacles_rgb/pybullet_obstacle_rgb_v1_500_seed0_dinov2_vits14_pool4.npz`
+- groups: `outputs/counterfactual/pybullet_obstacles_rgb/mixed_hard/mixed_hard_v0_groups.npz`
+- mode: `no_context`
+- groups count: `1000`
+- candidates: `5`
+- tokens: `16`
+- token dim: `384`
+- model dim: `384`
+- layers: `3`
+- heads: `6`
+- train/val/test groups: `800/100/100`
+- chance top-1: `0.200000`
+- best val top-1: `0.260000`
+
+| split | variant | top-1 | mean rank | positive margin frac | mean margin |
+| --- | --- | ---: | ---: | ---: | ---: |
+| train | original | 0.296250 | 2.690000 | 0.296250 | -0.013502 |
+| train | action_zero | 0.296250 | 2.690000 | 0.296250 | -0.013502 |
+| train | cond_state_shuffle | 0.296250 | 2.690000 | 0.296250 | -0.013502 |
+| train | cond_state_zero | 0.296250 | 2.690000 | 0.296250 | -0.013502 |
+| val | original | 0.260000 | 3.060000 | 0.260000 | -0.020396 |
+| val | action_zero | 0.260000 | 3.060000 | 0.260000 | -0.020396 |
+| val | cond_state_shuffle | 0.260000 | 3.060000 | 0.260000 | -0.020396 |
+| val | cond_state_zero | 0.260000 | 3.060000 | 0.260000 | -0.020396 |
+| test | original | 0.200000 | 3.150000 | 0.200000 | -0.024782 |
+| test | action_zero | 0.200000 | 3.150000 | 0.200000 | -0.024782 |
+| test | cond_state_shuffle | 0.200000 | 3.150000 | 0.200000 | -0.024782 |
+| test | cond_state_zero | 0.200000 | 3.150000 | 0.200000 | -0.024782 |
+
+## Interpretation
+
+This model predicts latent displacement tokens using a spatial Transformer over DINOv2 patch tokens.
+It is evaluated on mixed hard negatives in delta space.
+
+====================================================================================================
+Mixed hard delta Transformer: mode=full, seed=2
+====================================================================================================
+/opt/conda/lib/python3.11/site-packages/torch/nn/modules/transformer.py:307: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  warnings.warn(f"enable_nested_tensor is True, but self.use_nested_tensor is False because {why_not_sparsity_fast_path}")
+[0;93m2026-06-19 11:22:17.093018020 [W:onnxruntime:Default, device_discovery.cc:283 GetGpuDevices] Failed to detect devices under "/sys/class/drm/card0": device_discovery.cc:93 ReadFileContents Failed to open file: "/sys/class/drm/card0/device/vendor"[m
+mode=full epoch=001 loss=2.445843 val_top1=0.210000 val_rank=2.750
+mode=full epoch=020 loss=0.072382 val_top1=0.910000 val_rank=1.150
+mode=full epoch=040 loss=0.017501 val_top1=0.930000 val_rank=1.120
+mode=full epoch=060 loss=0.011072 val_top1=0.920000 val_rank=1.160
+mode=full epoch=080 loss=0.027736 val_top1=0.940000 val_rank=1.130
+mode=full epoch=100 loss=0.015329 val_top1=0.920000 val_rank=1.180
+mode=full epoch=120 loss=0.011117 val_top1=0.930000 val_rank=1.150
+mode=full epoch=140 loss=0.023246 val_top1=0.930000 val_rank=1.150
+mode=full epoch=160 loss=0.013378 val_top1=0.920000 val_rank=1.180
+mode=full epoch=180 loss=0.010241 val_top1=0.920000 val_rank=1.150
+mode=full epoch=200 loss=0.014863 val_top1=0.960000 val_rank=1.100
+mode=full epoch=220 loss=0.010055 val_top1=0.930000 val_rank=1.140
+mode=full epoch=240 loss=0.008419 val_top1=0.920000 val_rank=1.140
+mode=full epoch=260 loss=0.007540 val_top1=0.900000 val_rank=1.180
+mode=full epoch=280 loss=0.006584 val_top1=0.900000 val_rank=1.180
+mode=full epoch=300 loss=0.006166 val_top1=0.900000 val_rank=1.180
+reports/tables/protocol/pybullet_obstacle_rgb_encoder/mixed_hard/delta_transformer/full_seed2.md
+# Mixed hard delta Transformer: full
+
+- data: `outputs/counterfactual/pybullet_obstacles_rgb/pybullet_obstacle_rgb_v1_500_seed0_dinov2_vits14_pool4.npz`
+- groups: `outputs/counterfactual/pybullet_obstacles_rgb/mixed_hard/mixed_hard_v0_groups.npz`
+- mode: `full`
+- groups count: `1000`
+- candidates: `5`
+- tokens: `16`
+- token dim: `384`
+- model dim: `384`
+- layers: `3`
+- heads: `6`
+- train/val/test groups: `800/100/100`
+- chance top-1: `0.200000`
+- best val top-1: `0.960000`
+
+| split | variant | top-1 | mean rank | positive margin frac | mean margin |
+| --- | --- | ---: | ---: | ---: | ---: |
+| train | original | 1.000000 | 1.000000 | 1.000000 | 0.156348 |
+| train | action_zero | 0.468750 | 2.022500 | 0.468750 | -0.014849 |
+| train | cond_state_shuffle | 0.442500 | 2.475000 | 0.442500 | -0.034243 |
+| train | cond_state_zero | 0.395000 | 2.532500 | 0.395000 | -0.032821 |
+| val | original | 0.960000 | 1.080000 | 0.960000 | 0.114798 |
+| val | action_zero | 0.250000 | 2.610000 | 0.250000 | -0.056911 |
+| val | cond_state_shuffle | 0.370000 | 2.650000 | 0.370000 | -0.049771 |
+| val | cond_state_zero | 0.350000 | 2.640000 | 0.350000 | -0.046765 |
+| test | original | 0.950000 | 1.060000 | 0.950000 | 0.126633 |
+| test | action_zero | 0.250000 | 2.510000 | 0.250000 | -0.051042 |
+| test | cond_state_shuffle | 0.450000 | 2.300000 | 0.450000 | -0.017382 |
+| test | cond_state_zero | 0.390000 | 2.750000 | 0.390000 | -0.040396 |
+
+## Interpretation
+
+This model predicts latent displacement tokens using a spatial Transformer over DINOv2 patch tokens.
+It is evaluated on mixed hard negatives in delta space.
+
+====================================================================================================
+Mixed hard delta Transformer: mode=action_only, seed=2
+====================================================================================================
+/opt/conda/lib/python3.11/site-packages/torch/nn/modules/transformer.py:307: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  warnings.warn(f"enable_nested_tensor is True, but self.use_nested_tensor is False because {why_not_sparsity_fast_path}")
+[0;93m2026-06-19 11:24:10.944244550 [W:onnxruntime:Default, device_discovery.cc:283 GetGpuDevices] Failed to detect devices under "/sys/class/drm/card0": device_discovery.cc:93 ReadFileContents Failed to open file: "/sys/class/drm/card0/device/vendor"[m
+mode=action_only epoch=001 loss=2.420243 val_top1=0.260000 val_rank=2.740
+mode=action_only epoch=020 loss=1.286025 val_top1=0.360000 val_rank=2.250
+mode=action_only epoch=040 loss=1.163806 val_top1=0.350000 val_rank=2.210
+mode=action_only epoch=060 loss=1.112113 val_top1=0.360000 val_rank=2.210
+mode=action_only epoch=080 loss=1.071300 val_top1=0.370000 val_rank=2.160
+mode=action_only epoch=100 loss=1.055860 val_top1=0.360000 val_rank=2.180
+mode=action_only epoch=120 loss=1.033270 val_top1=0.340000 val_rank=2.200
+mode=action_only epoch=140 loss=1.018814 val_top1=0.340000 val_rank=2.250
+mode=action_only epoch=160 loss=1.013628 val_top1=0.320000 val_rank=2.240
+mode=action_only epoch=180 loss=1.012558 val_top1=0.340000 val_rank=2.210
+mode=action_only epoch=200 loss=1.016205 val_top1=0.350000 val_rank=2.220
+mode=action_only epoch=220 loss=0.992012 val_top1=0.330000 val_rank=2.240
+mode=action_only epoch=240 loss=1.011259 val_top1=0.350000 val_rank=2.220
+mode=action_only epoch=260 loss=0.989078 val_top1=0.320000 val_rank=2.200
+mode=action_only epoch=280 loss=0.959800 val_top1=0.320000 val_rank=2.230
+mode=action_only epoch=300 loss=0.936765 val_top1=0.350000 val_rank=2.200
+reports/tables/protocol/pybullet_obstacle_rgb_encoder/mixed_hard/delta_transformer/action_only_seed2.md
+# Mixed hard delta Transformer: action_only
+
+- data: `outputs/counterfactual/pybullet_obstacles_rgb/pybullet_obstacle_rgb_v1_500_seed0_dinov2_vits14_pool4.npz`
+- groups: `outputs/counterfactual/pybullet_obstacles_rgb/mixed_hard/mixed_hard_v0_groups.npz`
+- mode: `action_only`
+- groups count: `1000`
+- candidates: `5`
+- tokens: `16`
+- token dim: `384`
+- model dim: `384`
+- layers: `3`
+- heads: `6`
+- train/val/test groups: `800/100/100`
+- chance top-1: `0.200000`
+- best val top-1: `0.400000`
+
+| split | variant | top-1 | mean rank | positive margin frac | mean margin |
+| --- | --- | ---: | ---: | ---: | ---: |
+| train | original | 0.468750 | 1.937500 | 0.468750 | -0.002884 |
+| train | action_zero | 0.231250 | 2.843750 | 0.231250 | -0.026584 |
+| train | cond_state_shuffle | 0.468750 | 1.937500 | 0.468750 | -0.002884 |
+| train | cond_state_zero | 0.468750 | 1.937500 | 0.468750 | -0.002884 |
+| val | original | 0.400000 | 2.240000 | 0.400000 | -0.016296 |
+| val | action_zero | 0.230000 | 2.940000 | 0.230000 | -0.028211 |
+| val | cond_state_shuffle | 0.400000 | 2.240000 | 0.400000 | -0.016296 |
+| val | cond_state_zero | 0.400000 | 2.240000 | 0.400000 | -0.016296 |
+| test | original | 0.350000 | 2.450000 | 0.350000 | -0.018884 |
+| test | action_zero | 0.180000 | 3.210000 | 0.180000 | -0.037922 |
+| test | cond_state_shuffle | 0.350000 | 2.450000 | 0.350000 | -0.018884 |
+| test | cond_state_zero | 0.350000 | 2.450000 | 0.350000 | -0.018884 |
+
+## Interpretation
+
+This model predicts latent displacement tokens using a spatial Transformer over DINOv2 patch tokens.
+It is evaluated on mixed hard negatives in delta space.
+
+====================================================================================================
+Mixed hard delta Transformer: mode=state_only, seed=2
+====================================================================================================
+/opt/conda/lib/python3.11/site-packages/torch/nn/modules/transformer.py:307: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  warnings.warn(f"enable_nested_tensor is True, but self.use_nested_tensor is False because {why_not_sparsity_fast_path}")
+[0;93m2026-06-19 11:26:02.442003509 [W:onnxruntime:Default, device_discovery.cc:283 GetGpuDevices] Failed to detect devices under "/sys/class/drm/card0": device_discovery.cc:93 ReadFileContents Failed to open file: "/sys/class/drm/card0/device/vendor"[m
+mode=state_only epoch=001 loss=2.467328 val_top1=0.180000 val_rank=2.860
+mode=state_only epoch=020 loss=0.795979 val_top1=0.210000 val_rank=2.380
+mode=state_only epoch=040 loss=0.498417 val_top1=0.240000 val_rank=2.270
+mode=state_only epoch=060 loss=0.425158 val_top1=0.160000 val_rank=2.500
+mode=state_only epoch=080 loss=0.387522 val_top1=0.220000 val_rank=2.390
+mode=state_only epoch=100 loss=0.376098 val_top1=0.180000 val_rank=2.450
+mode=state_only epoch=120 loss=0.352568 val_top1=0.200000 val_rank=2.550
+mode=state_only epoch=140 loss=0.347024 val_top1=0.180000 val_rank=2.490
+mode=state_only epoch=160 loss=0.342949 val_top1=0.180000 val_rank=2.550
+mode=state_only epoch=180 loss=0.349127 val_top1=0.200000 val_rank=2.630
+mode=state_only epoch=200 loss=0.309687 val_top1=0.170000 val_rank=2.650
+mode=state_only epoch=220 loss=0.314730 val_top1=0.180000 val_rank=2.580
+mode=state_only epoch=240 loss=0.320734 val_top1=0.190000 val_rank=2.680
+mode=state_only epoch=260 loss=0.311267 val_top1=0.200000 val_rank=2.610
+mode=state_only epoch=280 loss=0.310344 val_top1=0.180000 val_rank=2.490
+mode=state_only epoch=300 loss=0.321322 val_top1=0.200000 val_rank=2.680
+reports/tables/protocol/pybullet_obstacle_rgb_encoder/mixed_hard/delta_transformer/state_only_seed2.md
+# Mixed hard delta Transformer: state_only
+
+- data: `outputs/counterfactual/pybullet_obstacles_rgb/pybullet_obstacle_rgb_v1_500_seed0_dinov2_vits14_pool4.npz`
+- groups: `outputs/counterfactual/pybullet_obstacles_rgb/mixed_hard/mixed_hard_v0_groups.npz`
+- mode: `state_only`
+- groups count: `1000`
+- candidates: `5`
+- tokens: `16`
+- token dim: `384`
+- model dim: `384`
+- layers: `3`
+- heads: `6`
+- train/val/test groups: `800/100/100`
+- chance top-1: `0.200000`
+- best val top-1: `0.350000`
+
+| split | variant | top-1 | mean rank | positive margin frac | mean margin |
+| --- | --- | ---: | ---: | ---: | ---: |
+| train | original | 0.430000 | 2.006250 | 0.430000 | -0.005395 |
+| train | action_zero | 0.430000 | 2.006250 | 0.430000 | -0.005395 |
+| train | cond_state_shuffle | 0.182500 | 3.093750 | 0.182500 | -0.038595 |
+| train | cond_state_zero | 0.111250 | 3.296250 | 0.111250 | -0.056416 |
+| val | original | 0.350000 | 2.370000 | 0.350000 | -0.014215 |
+| val | action_zero | 0.350000 | 2.370000 | 0.350000 | -0.014215 |
+| val | cond_state_shuffle | 0.130000 | 3.260000 | 0.130000 | -0.044276 |
+| val | cond_state_zero | 0.130000 | 3.170000 | 0.130000 | -0.051210 |
+| test | original | 0.210000 | 2.640000 | 0.210000 | -0.016415 |
+| test | action_zero | 0.210000 | 2.640000 | 0.210000 | -0.016415 |
+| test | cond_state_shuffle | 0.160000 | 3.400000 | 0.160000 | -0.047516 |
+| test | cond_state_zero | 0.170000 | 3.220000 | 0.170000 | -0.056209 |
+
+## Interpretation
+
+This model predicts latent displacement tokens using a spatial Transformer over DINOv2 patch tokens.
+It is evaluated on mixed hard negatives in delta space.
+
+====================================================================================================
+Mixed hard delta Transformer: mode=no_context, seed=2
+====================================================================================================
+/opt/conda/lib/python3.11/site-packages/torch/nn/modules/transformer.py:307: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  warnings.warn(f"enable_nested_tensor is True, but self.use_nested_tensor is False because {why_not_sparsity_fast_path}")
+[0;93m2026-06-19 11:27:54.075234522 [W:onnxruntime:Default, device_discovery.cc:283 GetGpuDevices] Failed to detect devices under "/sys/class/drm/card0": device_discovery.cc:93 ReadFileContents Failed to open file: "/sys/class/drm/card0/device/vendor"[m
+mode=no_context epoch=001 loss=2.483213 val_top1=0.210000 val_rank=3.010
+mode=no_context epoch=020 loss=1.890876 val_top1=0.310000 val_rank=2.720
+mode=no_context epoch=040 loss=1.775283 val_top1=0.250000 val_rank=2.920
+mode=no_context epoch=060 loss=1.732973 val_top1=0.200000 val_rank=3.120
+mode=no_context epoch=080 loss=1.665369 val_top1=0.220000 val_rank=3.000
+mode=no_context epoch=100 loss=1.651143 val_top1=0.210000 val_rank=3.010
+mode=no_context epoch=120 loss=1.622902 val_top1=0.260000 val_rank=2.880
+mode=no_context epoch=140 loss=1.582493 val_top1=0.240000 val_rank=2.920
+mode=no_context epoch=160 loss=1.584195 val_top1=0.260000 val_rank=2.910
+mode=no_context epoch=180 loss=1.564133 val_top1=0.250000 val_rank=2.910
+mode=no_context epoch=200 loss=1.559725 val_top1=0.240000 val_rank=2.910
+mode=no_context epoch=220 loss=1.522968 val_top1=0.240000 val_rank=2.960
+mode=no_context epoch=240 loss=1.527893 val_top1=0.260000 val_rank=2.910
+mode=no_context epoch=260 loss=1.521266 val_top1=0.260000 val_rank=2.930
+mode=no_context epoch=280 loss=1.517572 val_top1=0.250000 val_rank=2.930
+mode=no_context epoch=300 loss=1.505576 val_top1=0.230000 val_rank=2.980
+reports/tables/protocol/pybullet_obstacle_rgb_encoder/mixed_hard/delta_transformer/no_context_seed2.md
+# Mixed hard delta Transformer: no_context
+
+- data: `outputs/counterfactual/pybullet_obstacles_rgb/pybullet_obstacle_rgb_v1_500_seed0_dinov2_vits14_pool4.npz`
+- groups: `outputs/counterfactual/pybullet_obstacles_rgb/mixed_hard/mixed_hard_v0_groups.npz`
+- mode: `no_context`
+- groups count: `1000`
+- candidates: `5`
+- tokens: `16`
+- token dim: `384`
+- model dim: `384`
+- layers: `3`
+- heads: `6`
+- train/val/test groups: `800/100/100`
+- chance top-1: `0.200000`
+- best val top-1: `0.320000`
+
+| split | variant | top-1 | mean rank | positive margin frac | mean margin |
+| --- | --- | ---: | ---: | ---: | ---: |
+| train | original | 0.255000 | 2.861250 | 0.255000 | -0.018000 |
+| train | action_zero | 0.255000 | 2.861250 | 0.255000 | -0.018000 |
+| train | cond_state_shuffle | 0.255000 | 2.861250 | 0.255000 | -0.018000 |
+| train | cond_state_zero | 0.255000 | 2.861250 | 0.255000 | -0.018000 |
+| val | original | 0.320000 | 2.670000 | 0.320000 | -0.018060 |
+| val | action_zero | 0.320000 | 2.670000 | 0.320000 | -0.018060 |
+| val | cond_state_shuffle | 0.320000 | 2.670000 | 0.320000 | -0.018060 |
+| val | cond_state_zero | 0.320000 | 2.670000 | 0.320000 | -0.018060 |
+| test | original | 0.160000 | 3.350000 | 0.160000 | -0.026482 |
+| test | action_zero | 0.160000 | 3.350000 | 0.160000 | -0.026482 |
+| test | cond_state_shuffle | 0.160000 | 3.350000 | 0.160000 | -0.026482 |
+| test | cond_state_zero | 0.160000 | 3.350000 | 0.160000 | -0.026482 |
+
+## Interpretation
+
+This model predicts latent displacement tokens using a spatial Transformer over DINOv2 patch tokens.
+It is evaluated on mixed hard negatives in delta space.
+
