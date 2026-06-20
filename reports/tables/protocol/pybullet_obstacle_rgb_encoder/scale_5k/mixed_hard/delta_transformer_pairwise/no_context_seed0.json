@@ -1,0 +1,23 @@
+{
+  "data": "outputs/counterfactual/pybullet_obstacles_rgb_scale/pybullet_obstacle_rgb_v1_5k_seed0_dinov2_vits14_pool4.npz",
+  "groups": "outputs/counterfactual/pybullet_obstacles_rgb_scale/mixed_hard/mixed_hard_v0_10k_groups.npz",
+  "checkpoint": "outputs/counterfactual/pybullet_obstacles_rgb_scale/mixed_hard/delta_transformer/no_context_seed0/checkpoint.pt",
+  "mode": "no_context",
+  "test_groups": 1000,
+  "top1": 0.222,
+  "mean_rank": 2.918,
+  "pairwise_rows": [
+    {
+      "negative_type": "same_state_diff_action",
+      "pairwise_accuracy": 0.53,
+      "mean_margin": 0.0009518082370050251,
+      "count": 2000
+    },
+    {
+      "negative_type": "same_action_diff_state",
+      "pairwise_accuracy": 0.511,
+      "mean_margin": 0.00017876029596664011,
+      "count": 2000
+    }
+  ]
+}

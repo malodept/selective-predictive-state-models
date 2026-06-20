@@ -1,0 +1,47 @@
+nohup: ignoring input
+/opt/conda/lib/python3.11/site-packages/torch/nn/modules/transformer.py:307: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  warnings.warn(f"enable_nested_tensor is True, but self.use_nested_tensor is False because {why_not_sparsity_fast_path}")
+[0;93m2026-06-20 18:47:04.808679246 [W:onnxruntime:Default, device_discovery.cc:283 GetGpuDevices] Failed to detect devices under "/sys/class/drm/card0": device_discovery.cc:93 ReadFileContents Failed to open file: "/sys/class/drm/card0/device/vendor"[m
+mode=no_context epoch=001 loss=2.247045 val_top1=0.174000 val_rank=3.166
+mode=no_context epoch=020 loss=1.936298 val_top1=0.192000 val_rank=3.047
+mode=no_context epoch=040 loss=1.911369 val_top1=0.190000 val_rank=3.060
+mode=no_context epoch=060 loss=1.898478 val_top1=0.197000 val_rank=2.997
+mode=no_context epoch=080 loss=1.894250 val_top1=0.182000 val_rank=3.068
+mode=no_context epoch=100 loss=1.893584 val_top1=0.198000 val_rank=3.013
+reports/tables/protocol/pybullet_obstacle_rgb_encoder/scale_5k/mixed_hard/delta_transformer/no_context_seed0.md
+# Mixed hard delta Transformer: no_context
+
+- data: `outputs/counterfactual/pybullet_obstacles_rgb_scale/pybullet_obstacle_rgb_v1_5k_seed0_dinov2_vits14_pool4.npz`
+- groups: `outputs/counterfactual/pybullet_obstacles_rgb_scale/mixed_hard/mixed_hard_v0_10k_groups.npz`
+- mode: `no_context`
+- groups count: `10000`
+- candidates: `5`
+- tokens: `16`
+- token dim: `384`
+- model dim: `384`
+- layers: `3`
+- heads: `6`
+- train/val/test groups: `8000/1000/1000`
+- chance top-1: `0.200000`
+- best val top-1: `0.210000`
+
+| split | variant | top-1 | mean rank | positive margin frac | mean margin |
+| --- | --- | ---: | ---: | ---: | ---: |
+| train | original | 0.231500 | 2.912750 | 0.231250 | -0.018268 |
+| train | action_zero | 0.231500 | 2.912750 | 0.231250 | -0.018268 |
+| train | cond_state_shuffle | 0.231500 | 2.912750 | 0.231250 | -0.018268 |
+| train | cond_state_zero | 0.231500 | 2.912750 | 0.231250 | -0.018268 |
+| val | original | 0.210000 | 3.033000 | 0.210000 | -0.021437 |
+| val | action_zero | 0.210000 | 3.033000 | 0.210000 | -0.021437 |
+| val | cond_state_shuffle | 0.210000 | 3.033000 | 0.210000 | -0.021437 |
+| val | cond_state_zero | 0.210000 | 3.033000 | 0.210000 | -0.021437 |
+| test | original | 0.222000 | 2.918000 | 0.222000 | -0.019146 |
+| test | action_zero | 0.222000 | 2.918000 | 0.222000 | -0.019146 |
+| test | cond_state_shuffle | 0.222000 | 2.918000 | 0.222000 | -0.019146 |
+| test | cond_state_zero | 0.222000 | 2.918000 | 0.222000 | -0.019146 |
+
+## Interpretation
+
+This model predicts latent displacement tokens using a spatial Transformer over DINOv2 patch tokens.
+It is evaluated on mixed hard negatives in delta space.
+

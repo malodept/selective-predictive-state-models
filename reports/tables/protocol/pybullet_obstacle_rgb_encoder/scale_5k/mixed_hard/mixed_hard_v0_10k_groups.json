@@ -1,0 +1,25 @@
+{
+  "data": "outputs/counterfactual/pybullet_obstacles_rgb_scale/pybullet_obstacle_rgb_v1_5k_seed0_dinov2_vits14_pool4.npz",
+  "out": "outputs/counterfactual/pybullet_obstacles_rgb_scale/mixed_hard/mixed_hard_v0_10k_groups.npz",
+  "groups_requested": 10000,
+  "groups_mined": 10000,
+  "candidates": 5,
+  "chance_top1": 0.2,
+  "same_state_diff_action_negatives": 2,
+  "same_action_diff_state_negatives": 2,
+  "max_pos_dist": 0.15,
+  "anchor_blocked_fraction": 0.5007,
+  "offdiag_blocked_mismatch_fraction": 0.8129,
+  "offdiag_pos_dist": {
+    "mean": 0.0052713945402869285,
+    "p05": 0.0,
+    "median": 6.220684008440003e-05,
+    "p95": 0.01738009005784988
+  },
+  "offdiag_delta_dist": {
+    "mean": 25.572472105288504,
+    "p05": 17.199693584442137,
+    "median": 25.65138053894043,
+    "p95": 33.41419734954834
+  }
+}

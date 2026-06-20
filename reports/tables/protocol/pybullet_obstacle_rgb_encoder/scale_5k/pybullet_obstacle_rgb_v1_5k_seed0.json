@@ -1,0 +1,45 @@
+{
+  "out": "outputs/counterfactual/pybullet_obstacles_rgb_scale/pybullet_obstacle_rgb_v1_5k_seed0.npz",
+  "groups": 5000,
+  "candidates": 5,
+  "samples": 25000,
+  "chance_top1": 0.2,
+  "z_current_shape": [
+    25000,
+    16,
+    19
+  ],
+  "z_future_shape": [
+    25000,
+    16,
+    19
+  ],
+  "current_rgb_shape": [
+    25000,
+    96,
+    96,
+    3
+  ],
+  "future_rgb_shape": [
+    25000,
+    96,
+    96,
+    3
+  ],
+  "action_shape": [
+    25000,
+    2
+  ],
+  "image_size": 96,
+  "patch_grid": 4,
+  "horizon": 36,
+  "velocity": 1.2,
+  "num_blocked_directions": 2,
+  "action_names": [
+    "stay",
+    "right",
+    "left",
+    "forward",
+    "backward"
+  ]
+}

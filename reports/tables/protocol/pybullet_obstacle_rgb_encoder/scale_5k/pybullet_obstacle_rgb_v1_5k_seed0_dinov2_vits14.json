@@ -1,0 +1,36 @@
+{
+  "input": "outputs/counterfactual/pybullet_obstacles_rgb_scale/pybullet_obstacle_rgb_v1_5k_seed0.npz",
+  "output": "outputs/counterfactual/pybullet_obstacles_rgb_scale/pybullet_obstacle_rgb_v1_5k_seed0_dinov2_vits14.npz",
+  "model": "dinov2_vits14",
+  "image_size": 224,
+  "batch_size": 64,
+  "device": "cuda",
+  "z_current_shape": [
+    25000,
+    256,
+    384
+  ],
+  "z_future_shape": [
+    25000,
+    256,
+    384
+  ],
+  "z_dtype": "float16",
+  "cls_current_shape": [
+    25000,
+    384
+  ],
+  "cls_future_shape": [
+    25000,
+    384
+  ],
+  "action_shape": [
+    25000,
+    2
+  ],
+  "candidate_indices_shape": [
+    5000,
+    5
+  ],
+  "output_size_gb": 9.09354529
+}
