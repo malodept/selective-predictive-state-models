@@ -1,0 +1,46 @@
+{
+  "data": "outputs/counterfactual/pybullet_obstacles_rgb_scale/pybullet_obstacle_rgb_v1_5k_seed0_dinov2_vits14_pool4.npz",
+  "groups": "outputs/counterfactual/pybullet_obstacles_rgb_scale/mixed_hard_state_disjoint/mixed_hard_state_disjoint_v0_groups.npz",
+  "checkpoint": "outputs/counterfactual/pybullet_obstacles_rgb_scale/mixed_hard_state_disjoint/delta_transformer/no_context_seed0/checkpoint.pt",
+  "mode": "no_context",
+  "split_source": "explicit",
+  "test_groups": 1000,
+  "eps": 1e-08,
+  "argmin_top1_biased": 0.263,
+  "strict_top1": 0.157,
+  "tieaware_top1": 0.1923333333333333,
+  "correct_tied_with_other_frac": 0.106,
+  "mean_tie_count_at_min": 1.212,
+  "pairwise_rows": [
+    {
+      "negative_type": "same_action_diff_state",
+      "strict_win_frac": 0.4345,
+      "tie_frac": 0.181,
+      "loss_frac": 0.3845,
+      "nonloss_frac": 0.6155,
+      "mean_margin": 0.0008841232061386109,
+      "count": 2000,
+      "margin_stats": {
+        "mean": 0.0008841232061386109,
+        "p05": -0.048375499248504636,
+        "median": 0.0,
+        "p95": 0.049755179882049555
+      }
+    },
+    {
+      "negative_type": "same_state_diff_action",
+      "strict_win_frac": 0.4995,
+      "tie_frac": 0.0,
+      "loss_frac": 0.5005,
+      "nonloss_frac": 0.4995,
+      "mean_margin": -0.00012645900249481202,
+      "count": 2000,
+      "margin_stats": {
+        "mean": -0.00012645900249481202,
+        "p05": -0.04640991687774658,
+        "median": -7.832050323486328e-05,
+        "p95": 0.04693590402603149
+      }
+    }
+  ]
+}

@@ -103,12 +103,17 @@ def main():
     model.eval()
 
     n_groups = cand.shape[0]
-    rng = np.random.default_rng(int(ckpt_args.get("seed", 0)))
-    perm = rng.permutation(n_groups)
+    if "split" in g.files:
+        split = g["split"].astype(str)
+        test_groups = np.where(split == "test")[0]
+        print(f"using explicit test split from groups file: test={len(test_groups)}", flush=True)
+    else:
+        rng = np.random.default_rng(int(ckpt_args.get("seed", 0)))
+        perm = rng.permutation(n_groups)
 
-    n_train = int(float(ckpt_args.get("train_frac", 0.8)) * n_groups)
-    n_val = int(float(ckpt_args.get("val_frac", 0.1)) * n_groups)
-    test_groups = perm[n_train + n_val:]
+        n_train = int(float(ckpt_args.get("train_frac", 0.8)) * n_groups)
+        n_val = int(float(ckpt_args.get("val_frac", 0.1)) * n_groups)
+        test_groups = perm[n_train + n_val:]
 
     preds = []
     tgts = []

@@ -173,15 +173,26 @@ def main():
     tokens, token_dim = z.shape[1], z.shape[2]
     action_dim = a.shape[1]
 
-    rng = np.random.default_rng(args.seed)
-    perm = rng.permutation(n_groups)
+    if "split" in g.files:
+        split = g["split"].astype(str)
+        train_groups = np.where(split == "train")[0]
+        val_groups = np.where(split == "val")[0]
+        test_groups = np.where(split == "test")[0]
+        print(
+            f"using explicit split from groups file: "
+            f"train={len(train_groups)} val={len(val_groups)} test={len(test_groups)}",
+            flush=True,
+        )
+    else:
+        rng = np.random.default_rng(args.seed)
+        perm = rng.permutation(n_groups)
 
-    n_train = int(args.train_frac * n_groups)
-    n_val = int(args.val_frac * n_groups)
+        n_train = int(args.train_frac * n_groups)
+        n_val = int(args.val_frac * n_groups)
 
-    train_groups = perm[:n_train]
-    val_groups = perm[n_train:n_train + n_val]
-    test_groups = perm[n_train + n_val:]
+        train_groups = perm[:n_train]
+        val_groups = perm[n_train:n_train + n_val]
+        test_groups = perm[n_train + n_val:]
 
     model = DeltaTransformer(
         token_dim=token_dim,
