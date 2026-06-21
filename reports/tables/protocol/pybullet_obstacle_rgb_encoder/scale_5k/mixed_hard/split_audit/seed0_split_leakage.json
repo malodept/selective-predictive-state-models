@@ -1,0 +1,61 @@
+{
+  "data": "outputs/counterfactual/pybullet_obstacles_rgb_scale/pybullet_obstacle_rgb_v1_5k_seed0_dinov2_vits14_pool4.npz",
+  "groups": "outputs/counterfactual/pybullet_obstacles_rgb_scale/mixed_hard/mixed_hard_v0_10k_groups.npz",
+  "seed": 0,
+  "n_mined_groups": 10000,
+  "split_stats": {
+    "train": {
+      "groups": 8000,
+      "samples_used": 20142,
+      "anchor_samples": 8000,
+      "candidate_samples": 20142,
+      "states_used": 4963,
+      "anchor_states": 4364,
+      "candidate_states": 4963
+    },
+    "val": {
+      "groups": 1000,
+      "samples_used": 4547,
+      "anchor_samples": 1000,
+      "candidate_samples": 4547,
+      "states_used": 2274,
+      "anchor_states": 919,
+      "candidate_states": 2274
+    },
+    "test": {
+      "groups": 1000,
+      "samples_used": 4544,
+      "anchor_samples": 1000,
+      "candidate_samples": 4544,
+      "states_used": 2239,
+      "anchor_states": 930,
+      "candidate_states": 2239
+    }
+  },
+  "overlaps": {
+    "train_val": {
+      "sample_overlap": 3661,
+      "anchor_sample_overlap": 0,
+      "candidate_sample_overlap": 3661,
+      "state_overlap": 2261,
+      "anchor_state_overlap": 722,
+      "candidate_state_overlap": 2261
+    },
+    "train_test": {
+      "sample_overlap": 3627,
+      "anchor_sample_overlap": 0,
+      "candidate_sample_overlap": 3627,
+      "state_overlap": 2223,
+      "anchor_state_overlap": 737,
+      "candidate_state_overlap": 2223
+    },
+    "val_test": {
+      "sample_overlap": 855,
+      "anchor_sample_overlap": 0,
+      "candidate_sample_overlap": 855,
+      "state_overlap": 1036,
+      "anchor_state_overlap": 145,
+      "candidate_state_overlap": 1036
+    }
+  }
+}
