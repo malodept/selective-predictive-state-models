@@ -16,3 +16,21 @@ reports/tables/*.csv
 
 # Dataset folders
 data/
+
+# Local/generated experiment artifacts
+logs/
+reports/code_context/
+reports/run_context/
+reports/figures/protocol/
+reports/*.log
+
+# Local external clones/checkouts
+external/
+
+# Local scratch artifacts accidentally created at repo root
+/git
+/ssh
+
+# Backup scripts
+*.bak_state_disjoint*
+*.bak_state_disjoint_v2*
