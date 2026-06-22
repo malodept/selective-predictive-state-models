@@ -1,0 +1,19 @@
+\begin{table}[t]
+\centering
+\small
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{lrrrr}
+\toprule
+Variant & Full mean & Full seed0 & Small-full & Gap \\
+\midrule
+block2\_h72\_seed11 & 0.972756 & 0.974 & 0.928 & 0.046 \\
+block2\_v18\_seed12 & 0.992386 & 0.995 & 0.987 & 0.008 \\
+block3\_h36\_seed13 & 0.854931 & 0.829 & 0.897 & -0.068 \\
+block3\_h48\_seed10 & 0.872305 & 0.841 & 0.853 & -0.012 \\
+block3\_h72\_seed14 & 0.807910 & 0.818 & 0.731 & 0.087 \\
+\bottomrule
+\end{tabular}%
+}
+\caption{Comparison between the reduced full model and the larger full model. The expensive model is not uniformly better, making value-of-computation non-trivial.}
+\label{tab:small_full}
+\end{table}

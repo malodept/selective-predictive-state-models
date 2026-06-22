@@ -1,0 +1,16 @@
+\begin{table}[t]
+\centering
+\small
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{lrrrrrr}
+\toprule
+Variant & Cheap & Full & Conf. & Context & Oracle & Route \\
+\midrule
+block3\_h36\_seed13 & 0.897 & 0.529 & 0.835 & 0.890 & 0.928 & 0.007 \\
+block3\_h72\_seed14 & 0.731 & 0.518 & 0.723 & 0.724 & 0.846 & 0.232 \\
+\bottomrule
+\end{tabular}%
+}
+\caption{Value-of-computation routing at $\lambda=0.30$. At higher compute cost, the context-aware router remains conservative on block3\_h36 and selectively routes on block3\_h72.}
+\label{tab:routing_lambda030}
+\end{table}

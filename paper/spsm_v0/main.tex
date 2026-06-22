@@ -8,9 +8,11 @@
 \usepackage{subcaption}
 \usepackage{microtype}
 \usepackage{xcolor}
+\usepackage{adjustbox}
 \usepackage{placeins}
 
 \graphicspath{{../../reports/paper_assets_v0/figures/}}
+\newcommand{\tablepath}{tables/}
 
 \title{
 Selective Predictive State Models: \\
@@ -116,6 +118,8 @@ The results show that horizon-only and velocity-only shifts preserve high perfor
     \label{fig:ood_top1}
 \end{figure}
 
+\input{tables/table_ood_summary.tex}
+
 \paragraph{Interpretation.}
 The model is not generically fragile.
 It remains action-grounded under several shifts, but constrained geometry degrades same-action/different-state discrimination.
@@ -135,6 +139,8 @@ We therefore train a smaller full state-action Transformer with model dimension 
     }
     \label{fig:small_vs_full}
 \end{figure}
+
+\input{tables/table_small_full_summary.tex}
 
 The small full model remains strong on ID and easy OOD settings, and is sometimes better than the larger model.
 However, the larger model helps in harder regimes such as block3 with longer horizon.
