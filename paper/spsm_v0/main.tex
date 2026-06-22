@@ -8,6 +8,7 @@
 \usepackage{subcaption}
 \usepackage{microtype}
 \usepackage{xcolor}
+\usepackage{placeins}
 
 \graphicspath{{../../reports/paper_assets_v0/figures/}}
 
@@ -187,6 +188,8 @@ The router uses cheap-model uncertainty and simple environment context features 
 Value-of-computation is not captured by confidence alone.
 It depends on the interaction between model uncertainty and environment context.
 
+\FloatBarrier
+
 \section{Limitations}
 
 This benchmark is synthetic and controlled.
@@ -199,6 +202,8 @@ Future work should include explicit geometry-complexity features, leave-one-shif
 We introduced a controlled exact-intervention setting for studying selective predictive-state models.
 The results show that action-grounded latent dynamics can be learned under state-disjoint evaluation, that constrained geometry induces specific OOD reliability failures, and that value-of-computation routing becomes meaningful when both cheap and expensive predictors are competent but not uniformly ordered.
 This supports the view that future world models should not only predict: they should also estimate when prediction is reliable and when additional computation is worth paying for.
+
+\FloatBarrier
 
 \bibliographystyle{plain}
 \begin{thebibliography}{9}
