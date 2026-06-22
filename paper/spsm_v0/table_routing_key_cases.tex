@@ -1,0 +1,18 @@
+\begin{table}[t]
+\centering
+\small
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{lrrrrrr}
+\toprule
+Variant & $\lambda$ & Cheap & Full & Conf. & Context & Oracle \\
+\midrule
+block3\_h36 & 0.10 & 0.897 & 0.729 & 0.846 & 0.891 & 0.937 \\
+block3\_h72 & 0.10 & 0.731 & 0.718 & 0.756 & 0.773 & 0.879 \\
+block3\_h36 & 0.30 & 0.897 & 0.529 & 0.835 & 0.890 & 0.928 \\
+block3\_h72 & 0.30 & 0.731 & 0.518 & 0.723 & 0.724 & 0.846 \\
+\bottomrule
+\end{tabular}%
+}
+\caption{Key value-of-computation cases. On block3\_h36, the small model is safer and context-aware routing avoids most harmful calls to the expensive model. On block3\_h72, the expensive model helps more often and context-aware routing improves over cheap-only, full-only, and confidence routing at $\lambda=0.10$.}
+\label{tab:routing_key_cases}
+\end{table}
