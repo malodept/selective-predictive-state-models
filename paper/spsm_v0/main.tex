@@ -102,6 +102,9 @@ Ablations show that action-only and state-only models each capture only partial 
 
 \paragraph{Claim.}
 Under exact interventions and state-disjoint evaluation, the model learns genuine state-action latent dynamics rather than exploiting a single shortcut.
+Table~\ref{tab:id_ablation} verifies this decomposition numerically: the full model combines state and action information, whereas incomplete-context ablations solve only part of the ranking problem.
+
+\input{table_id_ablation.tex}
 
 \section{Controlled OOD Reliability}
 

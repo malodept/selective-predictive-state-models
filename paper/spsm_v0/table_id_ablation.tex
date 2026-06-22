@@ -1,0 +1,16 @@
+\begin{table}[t]
+\centering
+\small
+\begin{tabular}{lrrr}
+\toprule
+Model & Top-1 & Same-action & Same-state \\
+\midrule
+Full & 0.999 & 1.000 & 0.999 \\
+Action-only & 0.327 & 0.496 & 0.903 \\
+State-only & 0.343 & 0.911 & 0.498 \\
+No-context & 0.192 & 0.530 & 0.442 \\
+\bottomrule
+\end{tabular}
+\caption{ID moving-only ablation study under the state-disjoint exact-intervention protocol. The full state-action model combines both discrimination axes, while incomplete-context ablations capture only partial structure. Same-action denotes same-action/different-state negatives; same-state denotes same-state/different-action negatives.}
+\label{tab:id_ablation}
+\end{table}
