@@ -1,0 +1,19 @@
+\begin{table}[t]
+\centering
+\small
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{lrrrrrrrrr}
+\toprule
+$\lambda$ & Cheap & Full & Conf. & Ctx-cls & KNN-Ctx & RH-Ctx & KNN-Ctx+Lat & RH-Ctx+Lat & Oracle \\
+\midrule
+0.02 & 0.792$\pm$0.059 & 0.798$\pm$0.000 & 0.808$\pm$0.032 & 0.803$\pm$0.034 & 0.821$\pm$0.025 & 0.827$\pm$0.029 & 0.824$\pm$0.022 & 0.818$\pm$0.026 & 0.893$\pm$0.016 \\
+0.05 & 0.792$\pm$0.059 & 0.768$\pm$0.000 & 0.804$\pm$0.033 & 0.801$\pm$0.035 & 0.810$\pm$0.034 & 0.817$\pm$0.036 & 0.818$\pm$0.024 & 0.815$\pm$0.026 & 0.890$\pm$0.016 \\
+0.10 & 0.792$\pm$0.059 & 0.718$\pm$0.000 & 0.793$\pm$0.039 & 0.795$\pm$0.040 & 0.798$\pm$0.039 & 0.805$\pm$0.048 & 0.809$\pm$0.030 & 0.810$\pm$0.032 & 0.885$\pm$0.018 \\
+0.20 & 0.792$\pm$0.059 & 0.618$\pm$0.000 & 0.788$\pm$0.054 & 0.788$\pm$0.045 & 0.792$\pm$0.061 & 0.791$\pm$0.061 & 0.796$\pm$0.048 & 0.793$\pm$0.055 & 0.874$\pm$0.021 \\
+0.30 & 0.792$\pm$0.059 & 0.518$\pm$0.000 & 0.792$\pm$0.059 & 0.781$\pm$0.052 & 0.790$\pm$0.063 & 0.785$\pm$0.069 & 0.791$\pm$0.050 & 0.794$\pm$0.059 & 0.864$\pm$0.025 \\
+\bottomrule
+\end{tabular}%
+}
+\caption{Multi-cheap-seed locked value-of-computation comparison on the hardest OOD shift, 3-block H=72. Values are mean$\pm$standard deviation over three independently trained cheap predictors; the expensive predictor is fixed.}
+\label{tab:multiseed_voc_h72}
+\end{table}
