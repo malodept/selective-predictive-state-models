@@ -1,0 +1,29 @@
+\begin{table}[t]
+\centering
+\small
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{llrrrl}
+\toprule
+$\lambda$ & Held-out shift & $\Delta$ vs fixed & 95\% CI & Oracle gap & Stable? \\
+\midrule
+0.00 & 3-block, H=36 & 0.008 & [-0.003, 0.021] & 0.060 & no \\
+0.00 & 3-block, H=48 & 0.027 & [0.008, 0.045] & 0.039 & \textbf{yes} \\
+0.00 & 3-block, H=72 & -0.008 & [-0.038, 0.022] & 0.115 & no \\
+0.05 & 3-block, H=36 & 0.012 & [-0.013, 0.040] & 0.059 & no \\
+0.05 & 3-block, H=48 & 0.035 & [0.017, 0.053] & 0.039 & \textbf{yes} \\
+0.05 & 3-block, H=72 & 0.002 & [-0.010, 0.018] & 0.113 & no \\
+0.10 & 3-block, H=36 & 0.012 & [-0.011, 0.036] & 0.059 & no \\
+0.10 & 3-block, H=48 & 0.044 & [0.012, 0.073] & 0.038 & \textbf{yes} \\
+0.10 & 3-block, H=72 & 0.015 & [-0.023, 0.058] & 0.109 & no \\
+0.20 & 3-block, H=36 & 0.003 & [-0.019, 0.028] & 0.066 & no \\
+0.20 & 3-block, H=48 & 0.046 & [0.015, 0.075] & 0.035 & \textbf{yes} \\
+0.20 & 3-block, H=72 & 0.016 & [-0.029, 0.069] & 0.106 & no \\
+0.30 & 3-block, H=36 & -0.002 & [-0.026, 0.022] & 0.071 & no \\
+0.30 & 3-block, H=48 & 0.047 & [0.018, 0.073] & 0.034 & \textbf{yes} \\
+0.30 & 3-block, H=72 & 0.010 & [-0.036, 0.068] & 0.110 & no \\
+\bottomrule
+\end{tabular}%
+}
+\caption{Seed-aware bootstrap validation of the pre-specified ridge expected-utility router. The router chooses among Tiny, Small, Medium, and Full using only Tiny-model diagnostics, action, and observable context. Stable positive gains appear on the H=48 hard OOD shift, while H=72 retains large oracle headroom.}
+\label{tab:multiseed_ridge_router_bootstrap}
+\end{table}

@@ -1,0 +1,34 @@
+{
+  "data": "outputs/counterfactual/pybullet_obstacles_rgb_v5_3_ood/block3_h36_seed13/pybullet_obstacle_rgb_v1_ood_block3_h36_seed13_dinov2_vits14_pool4.npz",
+  "groups": "outputs/counterfactual/pybullet_obstacles_rgb_v5_3_ood/block3_h36_seed13/mixed_hard_state_disjoint_v0_groups.npz",
+  "checkpoint": "outputs/counterfactual/pybullet_obstacles_rgb_scale/mixed_hard_state_disjoint/delta_transformer/full_seed0/checkpoint.pt",
+  "mode": "full",
+  "split_source": "explicit",
+  "test_groups_moving_only": 409,
+  "excluded_action": "stay",
+  "eps": 1e-08,
+  "biased_argmin_top1": 0.8288508557457213,
+  "strict_top1": 0.8288508557457213,
+  "tieaware_top1": 0.8288508557457213,
+  "mean_tie_count_at_min": 1.0,
+  "pairwise_rows": [
+    {
+      "negative_type": "same_action_diff_state",
+      "strict_win_frac": 0.863080684596577,
+      "tie_frac": 0.0,
+      "loss_frac": 0.13691931540342298,
+      "nonloss_frac": 0.863080684596577,
+      "mean_margin": 0.1456537943670394,
+      "count": 818
+    },
+    {
+      "negative_type": "same_state_diff_action",
+      "strict_win_frac": 0.9792176039119804,
+      "tie_frac": 0.0,
+      "loss_frac": 0.02078239608801956,
+      "nonloss_frac": 0.9792176039119804,
+      "mean_margin": 0.1429806682474747,
+      "count": 818
+    }
+  ]
+}

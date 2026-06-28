@@ -1,0 +1,17 @@
+\begin{table}[t]
+\centering
+\small
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{lrrrr}
+\toprule
+Hard OOD shift & Tiny & Small & Medium & Full \\
+\midrule
+3-block, H=36 & 0.876$\pm$0.021 & 0.869$\pm$0.025 & 0.879$\pm$0.014 & 0.855$\pm$0.024 \\
+3-block, H=48 & 0.853$\pm$0.020 & 0.867$\pm$0.017 & 0.884$\pm$0.001 & 0.872$\pm$0.030 \\
+3-block, H=72 & 0.810$\pm$0.032 & 0.792$\pm$0.059 & 0.829$\pm$0.016 & 0.808$\pm$0.011 \\
+\bottomrule
+\end{tabular}%
+}
+\caption{Multi-seed capacity frontier under hard OOD shifts. Values are tie-aware top-1 mean$\pm$standard deviation over three independently trained predictors per capacity. Capacity is non-monotonic: the largest model is not the best mean model on any block3 hard-OOD shift.}
+\label{tab:multiseed_capacity_frontier_hard_ood}
+\end{table}

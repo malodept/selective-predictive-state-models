@@ -1,0 +1,62 @@
+# State-disjoint confidence diagnostic: full
+
+- checkpoint: `outputs/counterfactual/pybullet_obstacles_rgb_scale/mixed_hard_state_disjoint/delta_transformer/medium_full_seed2/checkpoint.pt`
+- split source: `explicit`
+- test groups: `500`
+- temperature: `0.02`
+
+## Global metrics
+
+| metric | value |
+| --- | ---: |
+| mean confidence | 0.773725 |
+| biased top-1 | 0.844000 |
+| strict top-1 | 0.670000 |
+| tie-aware top-1 | 0.728000 |
+| correct tied with another candidate | 0.174000 |
+| mean tie count | 1.348000 |
+| ECE vs tie-aware target | 0.048947 |
+| ECE vs strict target | 0.106947 |
+
+## Selective prediction curve
+
+| coverage | kept | confidence | biased top-1 | strict top-1 | tie-aware top-1 | stay fraction | mean tie count |
+| ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| 1.00 | 500 | 0.773725 | 0.844000 | 0.670000 | 0.728000 | 0.174000 | 1.348000 |
+| 0.90 | 450 | 0.823334 | 0.833333 | 0.744444 | 0.774074 | 0.088889 | 1.177778 |
+| 0.80 | 400 | 0.882702 | 0.832500 | 0.832500 | 0.832500 | 0.000000 | 1.000000 |
+| 0.70 | 350 | 0.930235 | 0.880000 | 0.880000 | 0.880000 | 0.000000 | 1.000000 |
+| 0.60 | 300 | 0.965145 | 0.930000 | 0.930000 | 0.930000 | 0.000000 | 1.000000 |
+| 0.50 | 250 | 0.983103 | 0.960000 | 0.960000 | 0.960000 | 0.000000 | 1.000000 |
+| 0.40 | 200 | 0.992705 | 0.980000 | 0.980000 | 0.980000 | 0.000000 | 1.000000 |
+| 0.30 | 150 | 0.997115 | 0.993333 | 0.993333 | 0.993333 | 0.000000 | 1.000000 |
+
+## Action breakdown
+
+| action | count | confidence | biased top-1 | strict top-1 | tie-aware top-1 | tied correct frac | mean tie count |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| stay | 87 | 0.329978 | 1.000000 | 0.000000 | 0.333333 | 1.000000 | 3.000000 |
+| right | 107 | 0.874684 | 0.813084 | 0.813084 | 0.813084 | 0.000000 | 1.000000 |
+| left | 102 | 0.813537 | 0.823529 | 0.823529 | 0.823529 | 0.000000 | 1.000000 |
+| forward | 106 | 0.887482 | 0.764151 | 0.764151 | 0.764151 | 0.000000 | 1.000000 |
+| backward | 98 | 0.892951 | 0.846939 | 0.846939 | 0.846939 | 0.000000 | 1.000000 |
+
+## Calibration bins against tie-aware target
+
+| confidence bin | count | mean confidence | mean target | gap |
+| --- | ---: | ---: | ---: | ---: |
+| [0.0,0.1] | 0 | NA | NA | NA |
+| [0.1,0.2] | 0 | NA | NA | NA |
+| [0.2,0.3] | 0 | NA | NA | NA |
+| [0.3,0.4] | 94 | 0.332071 | 0.319149 | 0.012922 |
+| [0.4,0.5] | 14 | 0.459497 | 0.214286 | 0.245211 |
+| [0.5,0.6] | 35 | 0.548415 | 0.571429 | 0.023014 |
+| [0.6,0.7] | 27 | 0.660291 | 0.629630 | 0.030661 |
+| [0.7,0.8] | 26 | 0.746176 | 0.500000 | 0.246176 |
+| [0.8,0.9] | 44 | 0.861704 | 0.727273 | 0.134431 |
+| [0.9,1.0] | 260 | 0.980296 | 0.957692 | 0.022603 |
+
+## Interpretation
+
+This diagnostic asks whether model confidence tracks strict and tie-aware correctness.
+A useful reliability signal should assign lower confidence to non-identifiable `stay` ties and should improve accuracy as coverage decreases.

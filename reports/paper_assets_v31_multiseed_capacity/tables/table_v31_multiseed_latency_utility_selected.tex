@@ -1,0 +1,26 @@
+\begin{table}[t]
+\centering
+\small
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{llrrrrl}
+\toprule
+$\lambda$ & Shift & Tiny & Small & Medium & Full & Best \\
+\midrule
+0.00 & 3-block, H=36 & 0.876 & 0.869 & 0.879 & 0.855 & Medium \\
+0.00 & 3-block, H=48 & 0.853 & 0.867 & 0.884 & 0.872 & Medium \\
+0.00 & 3-block, H=72 & 0.810 & 0.792 & 0.829 & 0.808 & Medium \\
+0.05 & 3-block, H=36 & 0.867 & 0.859 & 0.859 & 0.805 & Tiny \\
+0.05 & 3-block, H=48 & 0.844 & 0.857 & 0.865 & 0.822 & Medium \\
+0.05 & 3-block, H=72 & 0.800 & 0.782 & 0.810 & 0.758 & Medium \\
+0.10 & 3-block, H=36 & 0.857 & 0.849 & 0.840 & 0.755 & Tiny \\
+0.10 & 3-block, H=48 & 0.835 & 0.847 & 0.846 & 0.772 & Small \\
+0.10 & 3-block, H=72 & 0.791 & 0.772 & 0.791 & 0.708 & Tiny \\
+0.20 & 3-block, H=36 & 0.839 & 0.829 & 0.802 & 0.655 & Tiny \\
+0.20 & 3-block, H=48 & 0.816 & 0.827 & 0.807 & 0.672 & Small \\
+0.20 & 3-block, H=72 & 0.772 & 0.752 & 0.752 & 0.608 & Tiny \\
+\bottomrule
+\end{tabular}%
+}
+\caption{Latency-normalized fixed-capacity utility on hard OOD shifts. Utility is tie-aware top-1 minus $\lambda$ times measured relative batch-128 latency. Medium is favored at low cost on H=48/H=72, while smaller models become optimal as compute cost increases.}
+\label{tab:multiseed_latency_utility_hard_ood}
+\end{table}

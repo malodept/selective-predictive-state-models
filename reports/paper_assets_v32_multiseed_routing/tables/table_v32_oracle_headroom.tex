@@ -1,0 +1,29 @@
+\begin{table}[t]
+\centering
+\small
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{llrrr}
+\toprule
+$\lambda$ & Held-out shift & Oracle $\Delta$ vs fixed & 95\% CI & Oracle latency \\
+\midrule
+0.00 & 3-block, H=36 & 0.068 & [0.041, 0.098] & 0.195 \\
+0.00 & 3-block, H=48 & 0.066 & [0.051, 0.080] & 0.204 \\
+0.00 & 3-block, H=72 & 0.107 & [0.087, 0.129] & 0.207 \\
+0.05 & 3-block, H=36 & 0.070 & [0.056, 0.087] & 0.195 \\
+0.05 & 3-block, H=48 & 0.074 & [0.060, 0.089] & 0.204 \\
+0.05 & 3-block, H=72 & 0.115 & [0.096, 0.137] & 0.207 \\
+0.10 & 3-block, H=36 & 0.070 & [0.055, 0.087] & 0.195 \\
+0.10 & 3-block, H=48 & 0.082 & [0.060, 0.104] & 0.204 \\
+0.10 & 3-block, H=72 & 0.124 & [0.091, 0.157] & 0.207 \\
+0.20 & 3-block, H=36 & 0.069 & [0.054, 0.085] & 0.195 \\
+0.20 & 3-block, H=48 & 0.081 & [0.059, 0.105] & 0.204 \\
+0.20 & 3-block, H=72 & 0.122 & [0.089, 0.157] & 0.207 \\
+0.30 & 3-block, H=36 & 0.068 & [0.053, 0.083] & 0.195 \\
+0.30 & 3-block, H=48 & 0.081 & [0.059, 0.105] & 0.204 \\
+0.30 & 3-block, H=72 & 0.120 & [0.088, 0.155] & 0.207 \\
+\bottomrule
+\end{tabular}%
+}
+\caption{Multi-capacity oracle headroom under seed-aware bootstrap. The oracle selects among the four capacities per instance within each seed-aligned ladder. Large H=72 headroom indicates that the routing problem is not solved by current Tiny-only diagnostics.}
+\label{tab:multiseed_oracle_headroom}
+\end{table}
