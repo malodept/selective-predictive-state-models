@@ -1,0 +1,13 @@
+\section{Related Work}
+
+\paragraph{Latent world models and predictive representations.}
+World models learn compact predictive state representations that support forecasting, planning, or control. Classical formulations learn recurrent latent dynamics for model-based decision making, while recent joint-embedding predictive architectures emphasize prediction in representation space rather than pixel reconstruction. Our experiments follow this latent-prediction perspective: future observations are not generated as images, but compared through frozen DINOv2 patch-token displacements. This isolates the dynamics and reliability question from representation pretraining.
+
+\paragraph{Intervention-based evaluation.}
+A central difficulty in evaluating action-conditioned predictive models is that observational trajectories can entangle state, action, and environment correlations. SPSM instead uses exact simulator resets: several actions are applied from the same initial state, producing counterfactual futures with shared initial conditions. The hard-negative ranking protocol then separates same-state/different-action discrimination from same-action/different-state discrimination. This makes failures more diagnostic than aggregate rollout error alone.
+
+\paragraph{Selective prediction and value-of-computation.}
+Selective prediction studies when a model should abstain or defer under uncertainty, usually through risk-coverage tradeoffs. Adaptive computation and model cascades study when extra compute should be spent at inference time. SPSM adapts these ideas to action-conditioned latent world models: the router must decide whether additional predictive computation is worth its measured latency cost before the larger predictor is called.
+
+\paragraph{Multi-capacity predictive routing.}
+A common assumption in cascades is that larger models are more accurate but more expensive. Our results show that this assumption can fail under controlled OOD shifts: medium-capacity predictors can outperform the largest model, and the best capacity depends on the shift and cost. This motivates latency-normalized multi-capacity routing rather than a simple small-to-large cascade.

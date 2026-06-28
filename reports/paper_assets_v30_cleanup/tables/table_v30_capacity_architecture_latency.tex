@@ -1,0 +1,18 @@
+\begin{table}[t]
+\centering
+\small
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{lrrrrrrr}
+\toprule
+Model & Dim. & Layers & Heads & Params & MB & Lat. @1 & Rel. lat. @128 \\
+\midrule
+Tiny & 64 & 1 & 4 & 0.10M & 0.39 & 0.512 ms & 0.186 \\
+Small & 128 & 1 & 4 & 0.30M & 1.15 & 0.509 ms & 0.201 \\
+Medium & 192 & 2 & 4 & 1.04M & 3.99 & 0.802 ms & 0.383 \\
+Full & 384 & 3 & 6 & 5.63M & 21.48 & 1.079 ms & 1.000 \\
+\bottomrule
+\end{tabular}%
+}
+\caption{Capacity ladder used for latency-normalized value-of-computation. Latency is measured as median forward-pass time on the same GPU setup; relative latency is normalized by the Full model at batch size 128.}
+\label{tab:capacity_arch_latency}
+\end{table}
