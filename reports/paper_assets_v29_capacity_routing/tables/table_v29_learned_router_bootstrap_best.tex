@@ -1,0 +1,23 @@
+\begin{table}[t]
+\centering
+\small
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{llrrr}
+\toprule
+$\lambda$ & Shift & Best learned router & $\Delta$ vs fixed & 95\% CI \\
+\midrule
+0.05 & 3-block, H=36 & rf-oracle-label & -0.001 & [-0.028, 0.026] (no) \\
+0.05 & 3-block, H=48 & ridge-expected-utility & 0.042 & [0.019, 0.067] (\textbf{yes}) \\
+0.05 & 3-block, H=72 & rf-expected-utility & 0.008 & [-0.014, 0.030] (no) \\
+0.10 & 3-block, H=36 & rf-oracle-label & -0.003 & [-0.028, 0.023] (no) \\
+0.10 & 3-block, H=48 & ridge-expected-utility & 0.045 & [0.025, 0.067] (\textbf{yes}) \\
+0.10 & 3-block, H=72 & rf-expected-utility & 0.008 & [-0.016, 0.033] (no) \\
+0.20 & 3-block, H=36 & rf-expected-utility & -0.006 & [-0.028, 0.015] (no) \\
+0.20 & 3-block, H=48 & ridge-expected-utility & 0.032 & [0.015, 0.051] (\textbf{yes}) \\
+0.20 & 3-block, H=72 & rf-expected-utility & 0.008 & [-0.024, 0.038] (no) \\
+\bottomrule
+\end{tabular}%
+}
+\caption{Bootstrap validation of learned multi-capacity routing. The table reports the best learned router on each held-out hard OOD shift and its paired utility gain over the best fixed capacity. Stable gains appear on the H=48 shift, while H=72 retains substantial oracle headroom.}
+\label{tab:learned_multicapacity_bootstrap}
+\end{table}

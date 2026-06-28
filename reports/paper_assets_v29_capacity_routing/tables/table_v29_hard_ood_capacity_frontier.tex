@@ -1,0 +1,17 @@
+\begin{table}[t]
+\centering
+\small
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{lrrrr}
+\toprule
+Hard OOD shift & Tiny & Small & Medium & Full \\
+\midrule
+3-block, H=36 & 0.895 & 0.897 & 0.863 & 0.829 \\
+3-block, H=48 & 0.868 & 0.853 & 0.883 & 0.841 \\
+3-block, H=72 & 0.816 & 0.731 & 0.843 & 0.818 \\
+\bottomrule
+\end{tabular}%
+}
+\caption{Capacity is non-monotonic under hard OOD shifts. Values are tie-aware top-1; all models are evaluated with the same intervention protocol. Measured batch-128 relative latencies are Tiny=0.186, Small=0.201, Medium=0.383, Full=1.000.}
+\label{tab:capacity_frontier_hard_ood}
+\end{table}
