@@ -1,0 +1,9 @@
+variant,model,model_label,biased_argmin_top1,strict_top1,tie_aware_top1,mean_tie_count,same_action_diff_state_win,same_action_diff_state_margin,same_state_diff_action_win,same_state_diff_action_margin
+block1_h36_seed20,tiny_full_seed0,Tiny,0.935129,0.935129,0.935129,1.0,0.954712,0.194122,0.995104,0.219117
+block1_h36_seed20,small_full_seed0,Small,0.926561,0.926561,0.926561,1.0,0.94798,0.197471,0.993268,0.22808
+block1_h36_seed20,medium_full_seed0,Medium,0.970624,0.970624,0.970624,1.0,0.98164,0.214191,0.998776,0.215982
+block1_h36_seed20,full_seed0,Full,0.968176,0.968176,0.968176,1.0,0.979192,0.212769,0.998164,0.208049
+block4_h72_seed20,tiny_full_seed0,Tiny,0.581907,0.581907,0.581907,1.0,0.745721,0.0335,0.948044,0.0631
+block4_h72_seed20,small_full_seed0,Small,0.574572,0.574572,0.574572,1.0,0.743888,0.037648,0.943154,0.066088
+block4_h72_seed20,medium_full_seed0,Medium,0.570905,0.570905,0.570905,1.0,0.759169,0.037426,0.926039,0.063772
+block4_h72_seed20,full_seed0,Full,0.53423,0.53423,0.53423,1.0,0.742054,0.03739,0.882641,0.063084

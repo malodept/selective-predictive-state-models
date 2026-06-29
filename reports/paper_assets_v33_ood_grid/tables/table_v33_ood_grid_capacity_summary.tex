@@ -1,0 +1,22 @@
+\begin{table}[t]
+\centering
+\small
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{rrrrrrrl}
+\toprule
+Horizon & Blocked & Tiny & Small & Medium & Full & Med.-Full & Best \\
+\midrule
+36 & 1 & 0.941 & 0.940 & 0.971 & 0.966 & +0.006 & Medium \\
+36 & 2 & 0.996 & 0.996 & 0.995 & 0.998 & -0.004 & Full \\
+36 & 3 & 0.915 & 0.911 & 0.927 & 0.869 & +0.058 & Medium \\
+36 & 4 & 0.589 & 0.602 & 0.579 & 0.543 & +0.036 & Small \\
+72 & 1 & 0.881 & 0.906 & 0.927 & 0.879 & +0.048 & Medium \\
+72 & 2 & 0.974 & 0.934 & 0.970 & 0.977 & -0.007 & Full \\
+72 & 3 & 0.821 & 0.737 & 0.839 & 0.813 & +0.026 & Medium \\
+72 & 4 & 0.589 & 0.602 & 0.579 & 0.543 & +0.036 & Small \\
+\bottomrule
+\end{tabular}%
+}
+\caption{Systematic OOD grid over blocked directions and horizons. Values are tie-aware top-1 averaged over three layout seeds. Capacity ordering is non-monotonic: Full is best only in the easy blocked=2 regime, Medium dominates several intermediate constrained-geometry regimes, and smaller models are favored in the extreme blocked=4 regime.}
+\label{tab:ood_grid_capacity_summary}
+\end{table}
