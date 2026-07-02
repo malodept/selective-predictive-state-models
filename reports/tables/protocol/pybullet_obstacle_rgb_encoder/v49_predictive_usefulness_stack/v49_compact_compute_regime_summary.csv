@@ -1,0 +1,4 @@
+variant_label,all_correct,none_correct,useful_compute,anti_rescue,other_mixed,mean_oracle_headroom,stable_router_count,recommendation
+"3-block, H=36",0.7677261613691931,0.0529747351263243,0.0709046454767726,0.0668296658516707,0.0415647921760391,0.0695372351263242,1.0,mostly fixed-capacity regime; limited routing value
+"3-block, H=48",0.7595356550580431,0.0505804311774461,0.0961857379767827,0.0514096185737976,0.0422885572139303,0.0797331364013267,4.0,deploy margin-gated routing; useful signal is routable
+"3-block, H=72",0.655367231638418,0.0645682001614205,0.1259079903147699,0.0887812752219531,0.0653753026634382,0.1201452784503632,2.0,high oracle value; current routing only partially recovers it

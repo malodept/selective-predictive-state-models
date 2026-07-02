@@ -1,0 +1,17 @@
+\begin{table}[t]
+\centering
+\small
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{lrrrrr}
+\toprule
+Model & True-latent probe & Pred. + true probe & Pred. + specific probe & Gap & Ratio \\
+\midrule
+Tiny & 0.036 & 2.859 & 0.031 & 2.828 & 92.8x \\
+Medium & 0.036 & 2.553 & 0.027 & 2.526 & 94.3x \\
+Full & 0.036 & 2.006 & 0.026 & 1.980 & 77.7x \\
+\bottomrule
+\end{tabular}%
+}
+\caption{Predicted-latent physical calibration map. Probes trained on true future latents fail on predicted latents, while model-specific probes recover accurate physical xy predictions. This separates latent discrimination from physical calibration.}
+\label{tab:predicted_latent_calibration_map}
+\end{table}

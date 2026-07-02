@@ -1,0 +1,2 @@
+states,nondegenerate_frac,contact_mode_nontrivial_frac,mean_contact_action_count,mean_moving_contact_action_count,contact_count_std,mean_future_xy_spread,max_future_xy_spread_mean,mean_strong_displacement_actions,mean_rotation_actions
+512,0.765625,0.82421875,0.82421875,0.82421875,0.3810062059374073,0.04015205584291409,0.10038013552400571,0.66796875,0.33984375

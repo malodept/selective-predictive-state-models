@@ -1,0 +1,17 @@
+\begin{table}[t]
+\centering
+\small
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{lrrrrr}
+\toprule
+Shift & Useful & Anti-rescue & Oracle gap & Stable router $\lambda$ & Recommendation \\
+\midrule
+3-block, H=36 & 0.071 & 0.067 & 0.070 & 1 & mostly fixed-capacity regime; limited routing value \\
+3-block, H=48 & 0.096 & 0.051 & 0.080 & 4 & deploy margin-gated routing; useful signal is routable \\
+3-block, H=72 & 0.126 & 0.089 & 0.120 & 2 & high oracle value; current routing only partially recovers it \\
+\bottomrule
+\end{tabular}%
+}
+\caption{Interventional value-of-computation regimes. The same capacity ladder produces different compute recommendations across hard OOD shifts.}
+\label{tab:interventional_voc_regimes}
+\end{table}

@@ -1,0 +1,19 @@
+\begin{table*}[t]
+\centering
+\small
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{p{0.17\textwidth}p{0.22\textwidth}p{0.25\textwidth}p{0.31\textwidth}}
+\toprule
+Level & Diagnostic question & Failure hidden by scalar accuracy & SPSM evidence \\
+\midrule
+1. Counterfactual discrimination & Can the model select the correct future under exact interventions? & Average trajectory prediction can hide shortcut use and action-state entanglement. & Full state-action predictor reaches ID moving-only top-1 0.999, while action-only and state-only ablations fail on complementary hard-negative axes. \\
+2. Failure-axis diagnosis & When prediction fails, which axis fails? & A single OOD score does not reveal whether the issue is action grounding, state geometry, or another factor. & Controlled 3-block OOD shifts primarily degrade state discrimination; H=72 full model has state discrimination 0.847 while action discrimination remains 0.983. \\
+3. Compute-regime map & Is extra predictive compute useful, harmful, unnecessary, or insufficient? & Bigger-model fallback assumes monotonic improvement, but larger capacities can introduce different failures. & H=48 is the cleanest routable regime: useful=0.096, anti-rescue=0.051, stable router lambdas=4. H=72 has larger value but harder routing: useful=0.126, anti-rescue=0.089, oracle gap=0.120. \\
+4. Predicted-latent calibration & Are predicted futures directly interpretable by downstream probes? & Latent ranking can be correct even if predicted latents are not in the same operational coordinate system as encoded futures. & True-future probes fail on predicted latents with xy error 2.006-2.859, while model-specific probes recover 0.026-0.031 (77.7x-94.3x error reduction ratio). \\
+5. Decision actionability & Do calibrated predicted latents support action choice? & A prediction can be accurate in latent space but not useful for downstream decisions or latency-normalized utility. & Model-specific calibration improves one-step action accuracy by 0.383-0.500 and reduces regret by 0.207-0.259. On obstacle-sensitive challenge goals, calibrated predictors reduce regret by 0.065-0.073, stable in 3 blocks. \\
+\bottomrule
+\end{tabular}%
+}
+\caption{Predictive usefulness stack. SPSM evaluates latent world models through multiple diagnostic levels rather than a single scalar accuracy: counterfactual discrimination, failure-axis diagnosis, interventional value-of-computation, predicted-latent calibration, and downstream actionability.}
+\label{tab:predictive_usefulness_stack}
+\end{table*}

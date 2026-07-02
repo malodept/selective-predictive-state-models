@@ -1,0 +1,17 @@
+\begin{table}[t]
+\centering
+\small
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{lrrrr}
+\toprule
+Model & Pred.+true probe & Pred.+specific probe & Decision regret red. & Challenge red. \\
+\midrule
+Tiny & 2.859 & 0.031 & 0.259 & 0.073 \\
+Medium & 2.553 & 0.027 & 0.255 & 0.065 \\
+Full & 2.006 & 0.026 & 0.207 & 0.073 \\
+\bottomrule
+\end{tabular}%
+}
+\caption{Predicted-latent calibration and actionability. Predicted latents are not directly decoded by true-future probes, but model-specific calibration recovers physical decision utility.}
+\label{tab:predicted_latent_actionability_compact}
+\end{table}

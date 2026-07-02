@@ -1,0 +1,2 @@
+states,mean_future_xy_spread,median_future_xy_spread,max_future_xy_spread_mean,nondegenerate_frac,mean_contact_action_count,mean_moving_contact_count,max_object_disp_mean
+256,0.07775391219183803,0.07781799733638764,0.19438478047959507,1.0,1.0,1.0,0.19438478047959507

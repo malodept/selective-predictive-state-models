@@ -34,3 +34,9 @@ external/
 # Backup scripts
 *.bak_state_disjoint*
 *.bak_state_disjoint_v2*
+
+# Local/generated artifacts
+*.npz
+paper/spsm_v0_overleaf.zip
+paper/spsm_v0_overleaf/
+paper/spsm_v0_overleaf_flat/

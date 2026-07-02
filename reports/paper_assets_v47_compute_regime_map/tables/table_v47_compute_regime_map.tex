@@ -1,0 +1,15 @@
+\begin{table}[t]
+\centering
+\small
+\begin{tabular}{lrrrrrr}
+\toprule
+Shift & All & None & Useful & Anti-rescue & Other & Sum \\
+\midrule
+3-block, H=36 & 0.768 & 0.053 & 0.071 & 0.067 & 0.042 & 1.000 \\
+3-block, H=48 & 0.760 & 0.051 & 0.096 & 0.051 & 0.042 & 1.000 \\
+3-block, H=72 & 0.655 & 0.065 & 0.126 & 0.089 & 0.065 & 1.000 \\
+\bottomrule
+\end{tabular}
+\caption{Compute-regime map on hard OOD shifts. Useful compute denotes queries where Tiny is wrong and at least one larger capacity is correct. Anti-rescue denotes queries where Tiny is correct but Full is wrong, showing that additional compute can actively hurt under a monotone cascade.}
+\label{tab:compute_regime_map}
+\end{table}
