@@ -1,0 +1,20 @@
+\begin{table}[t]
+\centering
+\small
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{llcc}
+\toprule
+Action coordinates & PCA dim & Clean action & Main controls \\
+\midrule
+Relative to agent & 8  & $0.237 \pm 0.005$ & $\approx 0.20$ \\
+Relative to agent & 16 & $0.227 \pm 0.005$ & $\approx 0.20$ \\
+Absolute target   & 8  & $0.496 \pm 0.070$ & $\approx 0.20$ \\
+Absolute target   & 16 & $0.499 \pm 0.060$ & $\approx 0.20$ \\
+Relative to block & 8  & $\mathbf{0.659 \pm 0.020}$ & $\approx 0.20$ \\
+Relative to block & 16 & $0.650 \pm 0.056$ & $\approx 0.20$ \\
+\bottomrule
+\end{tabular}%
+}
+\caption{Crop-DINO action-coordinate ablation on public PushT exact-reset over three seeds. With block-centered crops, actions expressed relative to the agent are weak, while absolute target coordinates and especially target coordinates relative to the block recover a strong action-conditioned visual signal. Chance is 0.200.}
+\label{tab:v62f_crop_dino_actioncoords_3seed}
+\end{table}

@@ -1,0 +1,40 @@
+# v62F crop-DINO action-coordinate ablation — v62e_crop_dino_features_n300_h30_r80_crop320_seed2 seed=2
+
+| action_mode | pca_dim | system | chance | oracle_pca | zero_delta | acc |
+|---|---:|---|---:|---:|---:|---:|
+| rel_agent | 8 | `clean_action` | 0.200 | 1.000 | 0.200 | 0.240 |
+| rel_agent | 8 | `zero_action` | 0.200 | 1.000 | 0.200 | 0.200 |
+| rel_agent | 8 | `neg_action` | 0.200 | 1.000 | 0.200 | 0.164 |
+| rel_agent | 8 | `shuffled_action` | 0.200 | 1.000 | 0.200 | 0.213 |
+| rel_agent | 8 | `random_action` | 0.200 | 1.000 | 0.200 | 0.200 |
+| rel_agent | 8 | `pred_shuffled` | 0.200 | 1.000 | 0.200 | 0.178 |
+| rel_agent | 16 | `clean_action` | 0.200 | 1.000 | 0.200 | 0.227 |
+| rel_agent | 16 | `zero_action` | 0.200 | 1.000 | 0.200 | 0.200 |
+| rel_agent | 16 | `neg_action` | 0.200 | 1.000 | 0.200 | 0.178 |
+| rel_agent | 16 | `shuffled_action` | 0.200 | 1.000 | 0.200 | 0.204 |
+| rel_agent | 16 | `random_action` | 0.200 | 1.000 | 0.200 | 0.200 |
+| rel_agent | 16 | `pred_shuffled` | 0.200 | 1.000 | 0.200 | 0.191 |
+| target_abs | 8 | `clean_action` | 0.200 | 1.000 | 0.200 | 0.436 |
+| target_abs | 8 | `zero_action` | 0.200 | 1.000 | 0.200 | 0.200 |
+| target_abs | 8 | `neg_action` | 0.200 | 1.000 | 0.200 | 0.196 |
+| target_abs | 8 | `shuffled_action` | 0.200 | 1.000 | 0.200 | 0.182 |
+| target_abs | 8 | `random_action` | 0.200 | 1.000 | 0.200 | 0.231 |
+| target_abs | 8 | `pred_shuffled` | 0.200 | 1.000 | 0.200 | 0.200 |
+| target_abs | 16 | `clean_action` | 0.200 | 1.000 | 0.200 | 0.431 |
+| target_abs | 16 | `zero_action` | 0.200 | 1.000 | 0.200 | 0.200 |
+| target_abs | 16 | `neg_action` | 0.200 | 1.000 | 0.200 | 0.156 |
+| target_abs | 16 | `shuffled_action` | 0.200 | 1.000 | 0.200 | 0.196 |
+| target_abs | 16 | `random_action` | 0.200 | 1.000 | 0.200 | 0.204 |
+| target_abs | 16 | `pred_shuffled` | 0.200 | 1.000 | 0.200 | 0.173 |
+| rel_block | 8 | `clean_action` | 0.200 | 1.000 | 0.200 | 0.680 |
+| rel_block | 8 | `zero_action` | 0.200 | 1.000 | 0.200 | 0.200 |
+| rel_block | 8 | `neg_action` | 0.200 | 1.000 | 0.200 | 0.102 |
+| rel_block | 8 | `shuffled_action` | 0.200 | 1.000 | 0.200 | 0.111 |
+| rel_block | 8 | `random_action` | 0.200 | 1.000 | 0.200 | 0.209 |
+| rel_block | 8 | `pred_shuffled` | 0.200 | 1.000 | 0.200 | 0.129 |
+| rel_block | 16 | `clean_action` | 0.200 | 1.000 | 0.200 | 0.711 |
+| rel_block | 16 | `zero_action` | 0.200 | 1.000 | 0.200 | 0.200 |
+| rel_block | 16 | `neg_action` | 0.200 | 1.000 | 0.200 | 0.133 |
+| rel_block | 16 | `shuffled_action` | 0.200 | 1.000 | 0.200 | 0.107 |
+| rel_block | 16 | `random_action` | 0.200 | 1.000 | 0.200 | 0.244 |
+| rel_block | 16 | `pred_shuffled` | 0.200 | 1.000 | 0.200 | 0.129 |
