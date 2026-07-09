@@ -1,0 +1,22 @@
+\begin{table}[t]
+\centering
+\small
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{lccc}
+\toprule
+System & Tiny & Medium & Full \\
+\midrule
+Chance & 0.200 & 0.200 & 0.200 \\
+Clean action & $0.318 \pm 0.020$ & $0.544 \pm 0.008$ & $\mathbf{0.609 \pm 0.005}$ \\
+Zero action & $0.200 \pm 0.000$ & $0.200 \pm 0.000$ & $0.200 \pm 0.000$ \\
+Negative action & $0.210 \pm 0.002$ & $0.193 \pm 0.007$ & $0.196 \pm 0.004$ \\
+Shuffled action & $0.200 \pm 0.007$ & $0.200 \pm 0.007$ & $0.203 \pm 0.001$ \\
+Random action & $0.202 \pm 0.002$ & $0.210 \pm 0.008$ & $0.210 \pm 0.003$ \\
+Shuffled prediction & $0.199 \pm 0.005$ & $0.198 \pm 0.012$ & $0.199 \pm 0.002$ \\
+Zero delta & $0.200 \pm 0.000$ & $0.200 \pm 0.000$ & $0.200 \pm 0.000$ \\
+\bottomrule
+\end{tabular}%
+}
+\caption{Public PushT exact-reset block-only predictor over three seeds. From each initial simulator state, five action targets are replayed and the model ranks the correct block future among same-state action futures. The predictor is trained only on block displacement $(\Delta x,\Delta y,\Delta \theta)$. Clean-action prediction is far above chance and capacity-ordered, while action ablations, shuffled prediction, and zero-delta controls remain near chance.}
+\label{tab:v62c_pusht_exact_block_predictor}
+\end{table}

@@ -1,0 +1,33 @@
+\begin{table}[t]
+\centering
+\small
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{lccc}
+\toprule
+System & Tiny & Medium & Full \\
+\midrule
+Chance & 0.200 & 0.200_pusht_exact_reset/{tables,text}
+
+cat > reports/paper_assets_v62_pusht_exact_reset/tables/table_v62b_pusht_exact_state_3seed.tex <<'EOF'
+\begin{table}[t]
+\centering
+\small
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{lccc}
+\toprule
+System & Tiny & Medium & Full \\
+\midrule
+Chance & 0.200 & 0.200 & 0.200 \\
+Clean action & $0.971 \pm 0.005$ & $\mathbf{0.989 \pm 0.003}$ & $0.988 \pm 0.001$ \\
+Zero action & $0.200 \pm 0.000$ & $0.200 \pm 0.000$ & $0.200 \pm 0.000$ \\
+Negative action & $0.148 \pm 0.003$ & $0.148 \pm 0.008$ & $0.145 \pm 0.009$ \\
+Shuffled action & $0.192 \pm 0.009$ & $0.196 \pm 0.015$ & $0.193 \pm 0.005$ \\
+Random action & $0.211 \pm 0.006$ & $0.211 \pm 0.007$ & $0.212 \pm 0.005$ \\
+Shuffled prediction & $0.192 \pm 0.010$ & $0.193 \pm 0.005$ & $0.193 \pm 0.009$ \\
+Zero delta & $0.200 \pm 0.000$ & $0.200 \pm 0.000$ & $0.200 \pm 0.000$ \\
+\bottomrule
+\end{tabular}%
+}
+\caption{Public PushT exact-reset state-space audit over three seeds. From the same initial simulator state, five action targets are replayed and the model ranks the correct future among same-state action futures. Clean action predictions are far above chance, while action ablations and shuffled-prediction controls remain near chance.}
+\label{tab:v62b_pusht_exact_state}
+\end{table}

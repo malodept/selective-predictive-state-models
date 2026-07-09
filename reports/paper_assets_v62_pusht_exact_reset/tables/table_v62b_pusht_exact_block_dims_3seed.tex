@@ -1,0 +1,21 @@
+\begin{table}[t]
+\centering
+\small
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{lccccc}
+\toprule
+System & Full state & Agent only & Block only & Block xy & Block $\theta$ \\
+\midrule
+Chance & 0.200 & 0.200 & 0.200 & 0.200 & 0.200 \\
+Clean action & $0.989 \pm 0.002$ & $1.000 \pm 0.000$ & $\mathbf{0.546 \pm 0.023}$ & $\mathbf{0.545 \pm 0.022}$ & $0.313 \pm 0.015$ \\
+Zero action & $0.200 \pm 0.000$ & $0.200 \pm 0.000$ & $0.200 \pm 0.000$ & $0.200 \pm 0.000$ & $0.200 \pm 0.000$ \\
+Negative action & $0.149 \pm 0.005$ & $0.145 \pm 0.009$ & $0.188 \pm 0.007$ & $0.188 \pm 0.007$ & $0.202 \pm 0.005$ \\
+Shuffled action & $0.195 \pm 0.011$ & $0.192 \pm 0.008$ & $0.206 \pm 0.011$ & $0.206 \pm 0.011$ & $0.200 \pm 0.005$ \\
+Random action & $0.210 \pm 0.010$ & $0.214 \pm 0.007$ & $0.204 \pm 0.004$ & $0.204 \pm 0.004$ & $0.206 \pm 0.008$ \\
+Shuffled prediction & $0.192 \pm 0.009$ & $0.193 \pm 0.010$ & $0.196 \pm 0.006$ & $0.195 \pm 0.006$ & $0.193 \pm 0.023$ \\
+\bottomrule
+\end{tabular}%
+}
+\caption{Dimension-wise public PushT exact-reset audit. Full-state ranking is partly easy because PushT actions are target positions for the agent. However, the action-conditioned signal remains above chance even when evaluating only the block dimensions, while zero-action, shuffled-action, random-action, and shuffled-prediction controls remain near chance.}
+\label{tab:v62b_pusht_exact_block_dims}
+\end{table}
