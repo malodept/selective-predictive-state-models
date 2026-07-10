@@ -1,0 +1,19 @@
+\begin{table}[t]
+\centering
+\caption{Scaled crop-DINO visual audit on public exact-reset PushT. We use $n=2000$ initial states per seed, five exact-reset action futures per state, block-centered DINO crops, PCA dimension 8, and actions represented relative to the block. Clean action-conditioned prediction remains far above chance, while anti-shortcut controls remain at or below chance.}
+\label{tab:pusht-crop-dino-n2000}
+\begin{tabular}{lcc}
+\toprule
+System & Accuracy & Interpretation \\
+\midrule
+Chance & 0.200 & random among $K=5$ futures \\
+Oracle PCA & 1.000 & candidate PCA deltas are identifiable \\
+Clean action & $0.696 \pm 0.017$ & action-conditioned visual prediction \\
+Zero action & $0.200 \pm 0.000$ & at chance \\
+Negative action & $0.138 \pm 0.017$ & below chance \\
+Shuffled action & $0.073 \pm 0.011$ & below chance \\
+Random action & $0.211 \pm 0.003$ & near chance \\
+Shuffled prediction & $0.125 \pm 0.004$ & below chance \\
+\bottomrule
+\end{tabular}
+\end{table}

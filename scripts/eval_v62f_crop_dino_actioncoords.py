@@ -1,5 +1,6 @@
 from pathlib import Path
 import argparse
+import copy
 import numpy as np
 import torch
 import torch.nn as nn
@@ -77,7 +78,7 @@ def train_mlp(x, y, train, val, args):
     xt = torch.as_tensor(x, dtype=torch.float32, device=device)
     yt = torch.as_tensor(y, dtype=torch.float32, device=device)
 
-    best = None
+    best = copy.deepcopy(model.state_dict())
     best_val = 1e9
 
     for ep in range(1, args.epochs + 1):
@@ -104,7 +105,7 @@ def train_mlp(x, y, train, val, args):
         if ep % 25 == 0 or ep == args.epochs:
             print(f"epoch={ep:03d} val={val_loss:.5f}")
 
-    model.load_state_dict(best)
+    model.load_state_dict(best if best is not None else model.state_dict())
     return model
 
 @torch.no_grad()

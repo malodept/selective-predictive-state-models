@@ -1,0 +1,80 @@
+#!/bin/bash
+#PBS -N v62_crop_relblock
+#PBS -q gpu4_std
+#PBS -l select=1:ncpus=24:ngpus=1:mem=256gb
+#PBS -l walltime=12:00:00
+#PBS -j eo
+
+set -euo pipefail
+
+cd $PBS_O_WORKDIR
+
+module restore
+module load PrgEnv-nvidia
+module load cuda
+module load cray-python
+
+source $PROJECT/envs/spsm/bin/activate
+
+export TORCH_HOME=$PROJECT/cache/torch
+export HF_HOME=$PROJECT/cache/huggingface
+export MPLCONFIGDIR=$TMPDIR/mpl
+export SDL_VIDEODRIVER=dummy
+export OMP_NUM_THREADS=1
+export OPENBLAS_NUM_THREADS=1
+export MKL_NUM_THREADS=1
+export NUMEXPR_NUM_THREADS=1
+export OPENCV_FOR_THREADS_NUM=1
+mkdir -p "$MPLCONFIGDIR"
+
+SEED=${SEED:-0}
+NSTATES=${NSTATES:-2000}
+HORIZON=${HORIZON:-30}
+RADIUS=${RADIUS:-80}
+
+OUTDIR=$SCRATCH/spsm_outputs/pusht_exact_reset_public
+mkdir -p "$OUTDIR"
+mkdir -p logs/spacehpc
+
+echo "JOB=$PBS_JOBID"
+echo "HOST=$(hostname)"
+echo "SEED=$SEED NSTATES=$NSTATES HORIZON=$HORIZON RADIUS=$RADIUS"
+echo "CUDA_VISIBLE_DEVICES=${CUDA_VISIBLE_DEVICES:-unset}"
+
+python - <<'PY'
+import torch
+print("torch", torch.__version__)
+print("cuda", torch.cuda.is_available())
+if torch.cuda.is_available():
+    print("gpu", torch.cuda.get_device_name(0))
+PY
+
+RAW=$OUTDIR/v62g_raw_images_n${NSTATES}_h${HORIZON}_r${RADIUS}_seed${SEED}.npz
+FEAT=$OUTDIR/v62e_crop_dino_features_n${NSTATES}_h${HORIZON}_r${RADIUS}_crop320_seed${SEED}.npz
+
+python -u scripts/build_v62g_pusht_raw_only.py \
+  --seed "$SEED" \
+  --num-states "$NSTATES" \
+  --horizon "$HORIZON" \
+  --radius "$RADIUS" \
+  --outdir "$OUTDIR"
+
+python -u scripts/build_v62e_crop_dino_features.py \
+  --raw "$RAW" \
+  --out "$FEAT" \
+  --crop-size 320 \
+  --resize 224 \
+  --pool-grid 4 \
+  --batch-size 64
+
+python -u scripts/eval_v62f_crop_dino_actioncoords.py \
+  --features "$FEAT" \
+  --seed "$SEED" \
+  --components 8 \
+  --action-modes rel_block \
+  --input-components 128 \
+  --epochs 200 \
+  --batch-size 256 \
+  --lr 1e-4
+
+echo "DONE seed=$SEED"
