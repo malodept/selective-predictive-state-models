@@ -1,0 +1,13 @@
+\subsection{External audit: official LeWorldModel checkpoint on PushT}
+
+We finally apply the same SPSM audit to an external, released world model: the official LeWorldModel PushT checkpoint. This experiment is important because it tests whether the protocol detects action-conditioned prediction in a model that was not trained or designed for our benchmark. The model is evaluated without retraining. We convert the public checkpoint to a local callable object, use the official \texttt{swm/PushT-v1} environment, and construct exact-reset counterfactual futures from the same state.
+
+LeWorldModel uses an action-chunk interface on PushT. The native environment action is two-dimensional, while the checkpoint expects action chunks of dimension ten, corresponding to five consecutive two-dimensional actions. We therefore evaluate candidate actions using the same chunked representation. To better match the data-collection distribution of the released model, candidate actions are sampled with a weak-policy-style construction: an action target is sampled around the agent, clipped around the block with a distance constraint, and rescaled to the native $[-1,1]$ action range.
+
+Table~\ref{tab:official-lewm-spsm} shows the main result. Clean action-conditioned LeWorldModel predictions consistently outperform zero-action, random-action, negative-action, and shuffled-prediction controls. This confirms that SPSM is not only diagnosing our own predictors: it can detect a measurable action-conditioned predictive signal in an external released world model.
+
+\input{reports/v67_external_lewm/table_official_lewm_spsm_d200}
+
+We also sweep the weak-policy distance constraint. Table~\ref{tab:official-lewm-dist-sweep} shows that increasing the constraint from 50 to 200 improves the clean action-conditioned ranking signal. This is consistent with the interpretation that the audit becomes more informative when exact-reset candidate futures are sufficiently separated while remaining in the weak-policy-style action distribution.
+
+\input{reports/v67_external_lewm/table_official_lewm_dist_sweep}
